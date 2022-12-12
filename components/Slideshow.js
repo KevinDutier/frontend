@@ -1,6 +1,7 @@
 import styles from "../styles/Slideshow.module.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import Link from "next/link";
 
 export default function Slideshow() {
   const clickBanner = (props) => {

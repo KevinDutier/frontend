@@ -9,7 +9,7 @@ export default function classical() {
   // search function executed upon loading the page
   async function search() {
     const search = await fetch(
-      `https://hitoshi-guitars-backend.vercel.app/articles/search/classical`
+      `https://hitoshi-guitars-backend.vercel.app/articles/search/brand/fender`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search

@@ -4,24 +4,24 @@ import { TailSpin } from "react-loader-spinner";
 
 export default function ProductCard(props) {
   const guitars = props.guitars;
-  const [message, setMessage] = useState(
-    <div className={styles.message}>
-      <TailSpin
-        height="120"
-        width="100vw"  // centers the spinner horizontally
-        color="black"
-        ariaLabel="tail-spin-loading"
-        radius="1"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
-    </div>
-  );
 
   // <p className={styles.message}>No results found.</p>
 
-  if (!guitars.length) return message;
+  // as long as guitars.length = 0, return spinner
+  if (!guitars.length)
+    return (
+      <div className={styles.message}>
+        <TailSpin
+          height="120"
+          color="black"
+          ariaLabel="tail-spin-loading"
+          radius="1"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
 
   // maps one guitar card per guitar
   const guitarMap = guitars.map((guitar, i) => {
