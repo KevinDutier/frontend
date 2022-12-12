@@ -1,0 +1,37 @@
+.header {
+    background-color: #151515;
+    height: 64px;
+    color: white;
+}
+
+.headerItems {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 22px;
+}
+
+.headerItemsEdge {
+    display: flex;
+}
+
+.icons {
+    margin: 8px;
+}
+
+.textInput {
+    width: 20vw;
+    padding: 10px 16px;
+    border-radius: 40px;
+    border: white;
+}

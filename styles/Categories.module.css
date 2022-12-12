@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  width: 97vw;
+  display: flex;
+  align-items: center;
+}
+
+.headText {
+  font-size: 28px;
+  margin: 36px 10px;
+  font-weight: 600;
+}
+
+.carousel {
+  width: 60vw;
+  height: 380px;
+  margin: auto;
+}
+
+.categoryImage {
+  border-radius: 3px;
+  margin: auto;
+  cursor: pointer;
+}
