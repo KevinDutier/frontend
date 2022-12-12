@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 
 export default function classical() {
   let [guitars, setGuitars] = useState([]);
-  let [productCard, setProductCard] = useState(<p>searching...</p>);  // TODO: add a loading icon or animation here
+  let [productCard, setProductCard] = useState(<p>searching...</p>);
 
   // search function executed upon loading the page
   async function search() {
