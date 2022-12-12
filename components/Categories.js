@@ -13,6 +13,10 @@ export default function Categories() {
     { source: "/categories/accessories.jpg", link: "./accessories"},
   ]
 
+  // function navigate() {
+  //   navigation.navigate("category", {category})
+  // }
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -45,10 +49,10 @@ export default function Categories() {
       itemClass="image-item"
       responsive={responsive}
     >
-      {images.map(image => {
+      {images.map((image, i) => {
         return (
           <Link href={image.link} >
-            <img className={styles.categoryImage} src={image.source} draggable={false} height="300px" width="300px" />
+            <img className={styles.categoryImage} key={i} src={image.source} draggable={false} height="300px" width="300px" />
           </Link>
         );
       })}
