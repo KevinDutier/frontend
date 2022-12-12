@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function ProductCard(props) {
   const guitars=props.guitars
 
-  const guitarMap = guitars.map((guitar) => {
+  const guitarMap = guitars.map((guitar, i) => {
     return (
-      <div className={styles.card}>
+      <div className={styles.card} key={i}>
         <img className={styles.image} src={guitar.img} />
         <div className={styles.cardInfo}>
           <h2 className={styles.brand}>{guitar.brand}</h2>

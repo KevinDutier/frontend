@@ -12,8 +12,8 @@ export default function Slideshow() {
       <main className={styles.main}>
         <Carousel
           className={styles.carousel}
-          autoPlay={false}  // enables autoplay
-          interval="5000"  // how long before showing next slide
+          autoPlay={true}  // enables autoplay
+          interval="4000"  // how long before showing next slide
           transitionTime="700"  // how long is the animation
           infiniteLoop={true}  // loops back to first image after reaching the last one
           showThumbs={false}  // hides thumbnails
