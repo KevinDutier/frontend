@@ -25,15 +25,15 @@ export default function Slideshow() {
         >
           <div>
             <img src="/banners/banner0.jpg" />
-            <p className="legend">New guitars</p>
+            <p className="legend">Have a look at our Fender collection !</p>
           </div>
           <div>
             <img src="/banners/banner1.jpg" />
-            <p className="legend">Jaguar's 60th anniversary</p>
+            <p className="legend">The Jaguar's 60th anniversary</p>
           </div>
           <div>
             <img src="/banners/banner2.jpg" />
-            <p className="legend">New basses</p>
+            <p className="legend">Check out our new basses !</p>
           </div>
         </Carousel>
       </main>
