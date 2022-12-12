@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 
 export default function Slideshow() {
   const clickBanner = (props) => {
-    console.log(props)
+    console.log(props);
   }
 
   return (
