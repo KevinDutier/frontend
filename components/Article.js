@@ -1,24 +1,28 @@
-// import { Popover, Button } from 'antd';
-// import 'antd/dist/antd.css';
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/Article.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
+// redux imports
+import { useDispatch } from "react-redux";
+import { addArticle } from "../reducers/cart";
+import { useSelector } from "react-redux";
+
 export default function Article() {
+  // gets the article data from the previous page
   const router = useRouter();
   const article = router.query;
 
-  function addToCart() {
-    console.log(`add ${article.model} to cart`)
+  const dispatch = useDispatch();
+
+    // passes the article's data and dispatches the function from the reducer (add)
+  function handleAddClick(props) {
+    dispatch(addArticle(props));
   }
 
   // capitalizes first letter
   const brandFormatted =
     article?.brand.charAt(0).toUpperCase() + article?.brand.slice(1);
-
-  console.log(article);
 
   return (
     <div className={styles.main}>
@@ -41,7 +45,7 @@ export default function Article() {
             <div className={styles.price}>
             </div>
             <div className={styles.add}>
-                <button className={styles.button} onClick={() => addToCart()}>
+                <button className={styles.button} onClick={() => handleAddClick(article)}>
                     <FontAwesomeIcon className={styles.cartIcon} icon={faCartPlus} style={{ fontSize: 20, color: "white", cursor: "pointer" }}/>
                     Add to cart
                 </button>

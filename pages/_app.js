@@ -1,14 +1,24 @@
-import '../styles/globals.css';
-import Head from 'next/head';
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import "../styles/globals.css";
+import Head from "next/head";
+
+// redux imports
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import cart from "../reducers/cart";
 
 function App({ Component, pageProps }) {
+  const store = configureStore({
+    reducer: { cart },
+  });
+
   return (
     <>
-      <Head>
-        <title>Hitoshi Guitars</title>
-      </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Head>
+          <title>Hitoshi Guitars</title>
+        </Head>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

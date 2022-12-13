@@ -13,10 +13,6 @@ export default function Categories() {
     { source: "/categories/accessories.jpg", link: "./accessories"},
   ]
 
-  // function navigate() {
-  //   navigation.navigate("category", {category})
-  // }
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

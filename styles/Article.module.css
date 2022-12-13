@@ -51,11 +51,12 @@
 
 .button {
   background-color: #151515;
+  width: 180px;
   border-radius: 8px;
   border-style: none;
   color: #FFFFFF;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   height: 44px;
   line-height: 20px;
@@ -66,10 +67,13 @@
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
-  vertical-align: baseline;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .button:hover {
