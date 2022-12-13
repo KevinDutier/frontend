@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import Head from 'next/head';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App({ Component, pageProps }) {
   return (

@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
 import styles from "../styles/ProductCard.module.css";
 import { TailSpin } from "react-loader-spinner";
+import { useRouter } from "next/router";
+
 
 export default function ProductCard(props) {
+  const router = useRouter();
   const guitars = props.guitars;
 
-  // <p className={styles.message}>No results found.</p>
+  function toArticlePage(i) {
+    router.push({pathname: "./article", query: guitars[i]}, `/article`)  // PASS QUERY OBJECT HERE
+    // router.push("./article", as="/test")
+  };
 
   // as long as guitars.length = 0, return spinner
   if (!guitars.length)
@@ -30,13 +35,13 @@ export default function ProductCard(props) {
       guitar?.brand.charAt(0).toUpperCase() + guitar?.brand.slice(1);
 
     return (
-      <div className={styles.card} key={i}>
-        <img className={styles.image} src={guitar?.img} />
-        <div className={styles?.cardInfo}>
-          <h2 className={styles.brand}>{brandFormatted}</h2>
-          <h3 className={styles.model}>{guitar?.model}</h3>
-          <p className={styles.price}>{guitar?.price} €</p>
-        </div>
+      <div className={styles.card} key={i} >
+          <div className={styles?.cardInfo} onClick={() => toArticlePage(i)} >
+          <img className={styles.image} src={guitar?.img} />
+            <h2 className={styles.brand}>{brandFormatted}</h2>
+            <h3 className={styles.model}>{guitar?.model}</h3>
+            <p className={styles.price}>{guitar?.price} €</p>
+          </div>
       </div>
     );
   });
