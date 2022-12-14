@@ -37,8 +37,8 @@ export default function ProductCard(props) {
       <div className={styles.card} key={i} >
           <div className={styles?.cardInfo} onClick={() => toArticlePage(i)} >
           <img className={styles.image} src={guitar?.img} />
-            <h2 className={styles.brand}>{brandFormatted}</h2>
-            <h3 className={styles.model}>{guitar?.model}</h3>
+            <p className={styles.brand}>{brandFormatted}</p>
+            <p className={styles.model}>{guitar?.model}</p>
             <p className={styles.price}>{guitar?.price} €</p>
           </div>
       </div>

@@ -49,14 +49,30 @@ export default function Header() {
       article?.brand.charAt(0).toUpperCase() + article?.brand.slice(1);
 
     return (
-      <Typography key={i} className={styles.popover}>
-        {brandFormatted} {article.model} - {article.price} €
-        <FontAwesomeIcon
-          icon={faCircleXmark}
-          className={styles.xIcon}
-          onClick={() => handleRemoveClick(article)}
-        />
-      </Typography>
+      <div className={styles.popoverContainer}>
+        <div className={styles.popover}>
+          <img className={styles.image} src={article.img} />
+          <div className={styles.popoverText}>
+            <p className={styles.brand}>{brandFormatted}</p>
+            <p className={styles.model}>{article.model}</p>
+            <p className={styles.price}>{article.price} €</p>
+          </div>
+        </div>
+          <FontAwesomeIcon
+            icon={faCircleXmark}
+            className={styles.xIcon}
+            onClick={() => handleRemoveClick(article)}
+          />
+      </div>
+
+      // <Typography key={i} className={styles.popover}>
+      //   {brandFormatted} {article.model} - {article.price} €
+      //   <FontAwesomeIcon
+      //     icon={faCircleXmark}
+      //     className={styles.xIcon}
+      //     onClick={() => handleRemoveClick(article)}
+      //   />
+      // </Typography>
     );
   });
 
@@ -91,7 +107,7 @@ export default function Header() {
                 horizontal: "right",
               }}
             >
-              <Typography className={styles.yourCart}>Your cart :</Typography>
+              {/* <Typography className={styles.yourCart}>Your cart :</Typography> */}
               {cartArticles}
               <Typography className={styles.popoverLast}>
                 <Typography>Total: {total} €</Typography>
