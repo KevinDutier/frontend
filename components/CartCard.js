@@ -10,16 +10,28 @@ export default function cartCard() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);
   const [total, setTotal] = useState(0);
+  const [update, setUpdate] = useState(0);
 
+  // removing an article
   function handleRemoveClick(props) {
     dispatch(removeArticle(props));
+    // resets total price
+    setTotal(0);
+    // updates total price when removing an article
+    setUpdate(update + 1);
   };
 
+  // calculates total price upon loading the page
+  useEffect(() => {
+    setUpdate(update + 1);
+  }, []);
+
+  // calculates total price
   useEffect(() => {
     for (let i = 0; i < cart.length; i++) {
       setTotal((total += parseInt(cart[i].price)));
     }
-  }, []);
+  }, [update]);
   
 
   const articles = cart.map((article, i) => {
