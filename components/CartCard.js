@@ -11,11 +11,15 @@ export default function cartCard() {
   const cart = useSelector((state) => state.cart.value);
   const [total, setTotal] = useState(0);
 
+  function handleRemoveClick(props) {
+    dispatch(removeArticle(props));
+  };
+
   useEffect(() => {
     for (let i = 0; i < cart.length; i++) {
       setTotal((total += parseInt(cart[i].price)));
     }
-  }, [])
+  }, []);
   
 
   const articles = cart.map((article, i) => {
@@ -31,7 +35,7 @@ export default function cartCard() {
             <p className={styles.model}>{article.model}</p>
             <p className={styles.brand}>{brandFormatted}</p>
             <p className={styles.price}>{article.price} €</p>
-            <p className={styles.remove}>remove article</p>
+            <p className={styles.remove} onClick={() => handleRemoveClick(article)}>remove article</p>
           </div>
         </div>
       </div>

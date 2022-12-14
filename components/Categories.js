@@ -35,7 +35,7 @@ export default function Categories() {
   };
 
   function toCategoryPage(props) {
-    router.push({pathname: "./category", query: {category: props}}, `/${props}`)
+    router.push({pathname: "./category", query: {category: `c/${props}`}}, `/${props}`)
   }
 
   return (

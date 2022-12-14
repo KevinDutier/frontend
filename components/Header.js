@@ -72,7 +72,6 @@ export default function Header() {
           <Link href="./">
             <img className={styles.logo} src="logo2.png" height="62" />
           </Link>
-          {/* <input className={styles.textInput} type="text" id="search" placeholder="Search" /> */}
           <div className={styles.headerItemsRight}>
             <FontAwesomeIcon
               className={styles.cart}

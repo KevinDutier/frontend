@@ -1,11 +1,23 @@
+import { useRouter } from "next/router";
 import styles from "../styles/Slideshow.module.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 
 export default function Slideshow() {
+  const router = useRouter();
+
   const clickBanner = (props) => {
-    console.log(props);
+    let redirect = undefined;
+
+    if (props === 0) redirect = "b/fender"
+    if (props === 1) redirect = "b/fender"
+    if (props === 2) redirect = "c/bass"
+
+    console.log(redirect);
+
+    // FIXME: clicking here makes logo disappear
+    // router.push({pathname: "./category", query: {category: redirect}}, `/${redirect}`)
   }
 
   return (
@@ -22,7 +34,7 @@ export default function Slideshow() {
           emulateTouch={true}  // enables swipe on non-touch screens
           stopOnHover={true}  // stops slideshow on hover
           useKeyboardArrows={true}  // enables user to use keyboard arrows
-          onClickItem={(props) => clickBanner(props)}
+          onClickItem={(index) => clickBanner(index)}
         >
           <div>
             <img src="/banners/banner0.jpg" />
