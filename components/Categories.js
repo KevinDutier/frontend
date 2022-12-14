@@ -1,16 +1,19 @@
 import styles from "../styles/Categories.module.css";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Categories() {
+  const router = useRouter();
+  
   const images = [
-    { source: "/categories/folk.jpg", link: "./folk"},
-    { source: "/categories/electric.jpg", link: "./electric"},
-    { source: "/categories/classical.jpg", link: "./classical"},
-    { source: "/categories/bass.jpg", link: "./bass"},
-    { source: "/categories/amps.jpg", link: "./amps"},
-    { source: "/categories/accessories.jpg", link: "./accessories"},
+    { source: "/categories/folk.jpg", category: "folk"},
+    { source: "/categories/electric.jpg", category: "electric"},
+    { source: "/categories/classical.jpg", category: "classical"},
+    { source: "/categories/bass.jpg", category: "bass"},
+    { source: "/categories/amps.jpg", category: "amps"},
+    { source: "/categories/accessories.jpg", category: "accessories"},
   ]
 
   const responsive = {
@@ -31,6 +34,10 @@ export default function Categories() {
     },
   };
 
+  function toCategoryPage(props) {
+    router.push({pathname: "./category", query: {category: props}}, `/${props}`)
+  }
+
   return (
     <>
       <div className={styles.head}>
@@ -47,9 +54,7 @@ export default function Categories() {
     >
       {images.map((image, i) => {
         return (
-          <Link href={image.link} >
-            <img className={styles.categoryImage} key={i} src={image.source} draggable={false} height="300px" width="300px" />
-          </Link>
+            <img className={styles.categoryImage} key={i}  onClick={() => toCategoryPage(image.category)} src={image.source} draggable={false} height="300px" width="300px" />
         );
       })}
     </Carousel>
