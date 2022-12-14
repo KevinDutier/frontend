@@ -6,7 +6,6 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 // redux imports
 import { useDispatch } from "react-redux";
 import { addArticle } from "../reducers/cart";
-import { useSelector } from "react-redux";
 
 export default function Article() {
   // gets the article data from the previous page

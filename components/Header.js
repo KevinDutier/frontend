@@ -1,9 +1,12 @@
 import styles from "../styles/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { Popover, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // redux imports
 import { useDispatch } from "react-redux";
@@ -15,39 +18,44 @@ export default function Header() {
   const cart = useSelector((state) => state.cart.value);
   const [anchorEl, setAnchorEl] = useState(null);
   const [total, setTotal] = useState(0);
-  
+
   // opens the popover
   function openPopover(event) {
     // calculates total price
     for (let i = 0; i < cart.length; i++) {
-      setTotal(total += parseInt(cart[i].price));
+      setTotal((total += parseInt(cart[i].price)));
     }
     // sets the popover's anchor to the cart icon
     setAnchorEl(event.currentTarget);
-  };
-  
+  }
+
   // closes the popover
   function closePopover() {
     // resets total
     setTotal(0);
     // sets anchor to null
     setAnchorEl(null);
-  };
-  
+  }
+
   // passes the article's data and dispatches the function from the reducer (remove)
   function handleRemoveClick(props) {
     dispatch(removeArticle(props));
-  };
+  }
 
   // maps the articles from the cart
   const cartArticles = cart.map((article, i) => {
+    // capitalizes first letter
+    const brandFormatted =
+      article?.brand.charAt(0).toUpperCase() + article?.brand.slice(1);
+
     return (
-      <Typography
-        key={i}
-        className={styles.popover}
-      >
-        {article.brand} {article.model} - {article.price} €
-        <FontAwesomeIcon icon={faCircleXmark} className={styles.xIcon} onClick={() => handleRemoveClick(article)} />
+      <Typography key={i} className={styles.popover}>
+        {brandFormatted} {article.model} - {article.price} €
+        <FontAwesomeIcon
+          icon={faCircleXmark}
+          className={styles.xIcon}
+          onClick={() => handleRemoveClick(article)}
+        />
       </Typography>
     );
   });
@@ -85,9 +93,12 @@ export default function Header() {
               }}
             >
               <Typography className={styles.yourCart}>Your cart :</Typography>
-                {cartArticles}
+              {cartArticles}
               <Typography className={styles.popoverLast}>
-                Total: {total} €
+                <Typography>Total: {total} €</Typography>
+                <Link href="./cartReview">
+                  <button>Order</button>
+                </Link>
               </Typography>
             </Popover>
           </div>

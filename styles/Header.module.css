@@ -57,6 +57,9 @@
 
 .popoverLast {
   padding: 10px 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 /* .textInput {
