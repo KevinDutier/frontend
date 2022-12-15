@@ -37,9 +37,9 @@ export default function Header() {
     setAnchorEl(null);
   }
 
-  // passes the article's data and dispatches the function from the reducer (remove)
-  function handleRemoveClick(props) {
-    dispatch(removeArticle(props));
+  // passes the article's index and dispatches the function from the reducer (remove)
+  function handleRemoveClick(props, index) {
+    dispatch(removeArticle(index));
     setTotal(total - props.price);
   }
 
@@ -62,7 +62,7 @@ export default function Header() {
           <FontAwesomeIcon
             icon={faCircleXmark}
             className={styles.xIcon}
-            onClick={() => handleRemoveClick(article)}
+            onClick={() => handleRemoveClick(article, i)}
           />
       </div>
     );

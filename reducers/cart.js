@@ -15,9 +15,12 @@ export const cartSlice = createSlice({
     },
     // remove an article from the cart
     removeArticle: (state, action) => {
-        // only removes the first matching article
-        const found = state.value.findIndex(cartArticle => cartArticle.model === action.payload.model)
-        state.value.splice(found, 1)
+      // simplified version: takes the index directly from the frontend (cart)
+      state.value.splice(action.payload, 1);
+
+      // PREVIOUS VERSION:
+      // only removes the first matching article
+      // const found = state.value.findIndex(cartArticle => cartArticle.model === action.payload.model)
     },
     emptyCart: (state, action) => {
       state.value = [];
