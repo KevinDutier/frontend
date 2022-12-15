@@ -31,8 +31,8 @@ export default function Header() {
 
   // closes the popover
   function closePopover() {
-    // resets total
-    setTotal(0);
+    // wait for popover to close, then reset total
+    setTimeout(function resetTotal() {setTotal(0)}, 130);
     // sets anchor to null
     setAnchorEl(null);
   }
@@ -40,6 +40,7 @@ export default function Header() {
   // passes the article's data and dispatches the function from the reducer (remove)
   function handleRemoveClick(props) {
     dispatch(removeArticle(props));
+    setTotal(total - props.price);
   }
 
   // maps the articles from the cart
@@ -49,7 +50,7 @@ export default function Header() {
       article?.brand.charAt(0).toUpperCase() + article?.brand.slice(1);
 
     return (
-      <div className={styles.popoverContainer}>
+      <div key={i} className={styles.popoverContainer}>
         <div className={styles.popover}>
           <img className={styles.image} src={article.img} />
           <div className={styles.popoverText}>
@@ -110,7 +111,7 @@ export default function Header() {
               {/* <Typography className={styles.yourCart}>Your cart :</Typography> */}
               {cartArticles}
               <Typography className={styles.popoverLast}>
-                <Typography>Total: {total} €</Typography>
+                <Typography>Subtotal: {total} €</Typography>
                 <Link href="./cartReview">
                   <button>Order</button>
                 </Link>
