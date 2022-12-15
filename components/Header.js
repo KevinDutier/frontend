@@ -104,7 +104,7 @@ export default function Header() {
               <Typography className={styles.popoverLast}>
                 <Typography>Subtotal: {total} €</Typography>
                 <Link href="./cartReview">
-                  <button>Order</button>
+                  <button className={styles.button}>Order</button>
                 </Link>
               </Typography>
             </Popover>

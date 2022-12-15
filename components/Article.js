@@ -5,7 +5,7 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 // redux imports
 import { useDispatch } from "react-redux";
-import { addArticle, emptyCart } from "../reducers/cart";
+import { addArticle } from "../reducers/cart";
 
 export default function Article() {
   // gets the article data from the previous page
@@ -47,14 +47,10 @@ export default function Article() {
             </div>
             <div className={styles.price}>
             </div>
-            <div className={styles.add}>
+            <div className={styles.ANIMATION}>
                 <button className={styles.button} onClick={() => handleAddClick(article)}>
                     <FontAwesomeIcon className={styles.cartIcon} icon={faCartPlus} style={{ fontSize: 20, color: "white", cursor: "pointer" }}/>
                     Add to cart
-                </button>
-                <button className={styles.button} onClick={() => resetCart()}>
-                    <FontAwesomeIcon className={styles.cartIcon} icon={faCartPlus} style={{ fontSize: 20, color: "white", cursor: "pointer" }}/>
-                    reset store
                 </button>
             </div>
             <div className={styles.list}>
