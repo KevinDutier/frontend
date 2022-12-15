@@ -1,0 +1,20 @@
+.sortBy {
+  /* add shadow */
+  position: absolute;
+  left: 93.7vw;
+}
+
+.popoverIcon {
+  cursor: pointer;
+  position: absolute;
+  left: 97vw;
+  top: 98px;
+}
+
+.popoverItem {
+  cursor: pointer;
+}
+
+.popoverItemLast {
+  cursor: pointer;
+}

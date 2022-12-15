@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import styles from "../styles/Article.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { Typography } from "@mui/material";
 
 // redux imports
 import { useDispatch } from "react-redux";
@@ -41,9 +42,9 @@ export default function Article() {
         {/* RIGHT SECTION */}
         <div className={styles.right}>
             <div className={styles.model}>
-                <h1>{brandFormatted}</h1>
-                <h2>{article.model}</h2>
-                <p>{article.price} €</p>
+                <Typography>{brandFormatted}</Typography>
+                <Typography>{article.model}</Typography>
+                <Typography>{article.price} €</Typography>
             </div>
             <div className={styles.price}>
             </div>

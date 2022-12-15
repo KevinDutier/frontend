@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 export default function Header() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);  // popover menu anchor
   const [total, setTotal] = useState(0);
 
   // opens the popover
@@ -99,7 +99,6 @@ export default function Header() {
                 horizontal: "right",
               }}
             >
-              {/* <Typography className={styles.yourCart}>Your cart :</Typography> */}
               {cartArticles}
               <Typography className={styles.popoverLast}>
                 <Typography>Subtotal: {total} €</Typography>
