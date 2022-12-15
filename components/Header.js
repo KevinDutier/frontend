@@ -65,15 +65,6 @@ export default function Header() {
             onClick={() => handleRemoveClick(article)}
           />
       </div>
-
-      // <Typography key={i} className={styles.popover}>
-      //   {brandFormatted} {article.model} - {article.price} €
-      //   <FontAwesomeIcon
-      //     icon={faCircleXmark}
-      //     className={styles.xIcon}
-      //     onClick={() => handleRemoveClick(article)}
-      //   />
-      // </Typography>
     );
   });
 

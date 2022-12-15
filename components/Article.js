@@ -5,7 +5,7 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 // redux imports
 import { useDispatch } from "react-redux";
-import { addArticle } from "../reducers/cart";
+import { addArticle, emptyCart } from "../reducers/cart";
 
 export default function Article() {
   // gets the article data from the previous page
@@ -17,7 +17,11 @@ export default function Article() {
     // passes the article's data and dispatches the function from the reducer (add)
   function handleAddClick(props) {
     dispatch(addArticle(props));
-  }
+  };
+
+  function resetCart() {
+    dispatch(emptyCart());
+  };
 
   // capitalizes first letter
   const brandFormatted =
@@ -47,6 +51,10 @@ export default function Article() {
                 <button className={styles.button} onClick={() => handleAddClick(article)}>
                     <FontAwesomeIcon className={styles.cartIcon} icon={faCartPlus} style={{ fontSize: 20, color: "white", cursor: "pointer" }}/>
                     Add to cart
+                </button>
+                <button className={styles.button} onClick={() => resetCart()}>
+                    <FontAwesomeIcon className={styles.cartIcon} icon={faCartPlus} style={{ fontSize: 20, color: "white", cursor: "pointer" }}/>
+                    reset store
                 </button>
             </div>
             <div className={styles.list}>
