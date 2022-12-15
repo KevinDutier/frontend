@@ -1,7 +1,7 @@
 import styles from "../styles/ProductCard.module.css";
+import SortMenu from "./SortMenu";
 import { TailSpin } from "react-loader-spinner";
 import { useRouter } from "next/router";
-
 
 export default function ProductCard(props) {
   const router = useRouter();
@@ -45,5 +45,9 @@ export default function ProductCard(props) {
     );
   });
 
-  return <div className={styles.container}>{guitarMap}</div>;
+  return (
+  <div className={styles.container}>
+    {guitarMap}
+  </div>
+  );
 }

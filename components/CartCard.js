@@ -1,4 +1,4 @@
-import styles from "../styles/cartCard.module.css";
+import styles from "../styles/CartCard.module.css";
 
 // redux imports
 import { useDispatch } from "react-redux";
@@ -13,12 +13,10 @@ export default function cartCard() {
   const [update, setUpdate] = useState(0);
 
   // removing an article
-  function handleRemoveClick(props) {
-    dispatch(removeArticle(props));
+  function handleRemoveClick(props, index) {
+    dispatch(removeArticle(index));
     // resets total price
-    setTotal(0);
-    // updates total price when removing an article
-    setUpdate(update + 1);
+    setTotal(total - props.price);
   };
 
   // calculates total price upon loading the page
@@ -47,7 +45,7 @@ export default function cartCard() {
             <p className={styles.model}>{article.model}</p>
             <p className={styles.brand}>{brandFormatted}</p>
             <p className={styles.price}>{article.price} €</p>
-            <p className={styles.remove} onClick={() => handleRemoveClick(article)}>remove article</p>
+            <p className={styles.remove} onClick={() => handleRemoveClick(article, i)}>remove article</p>
           </div>
         </div>
       </div>

@@ -5,6 +5,11 @@
   font-size: 24px;
 }
 
+.sort {
+  position: absolute;
+  right: 54px;
+}
+
 .container {
   display: flex;
   justify-content: center; /* centers elements horizontally */
