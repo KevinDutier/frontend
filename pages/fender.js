@@ -87,6 +87,7 @@ export default function fender() {
   async function search() {
     const request = await fetch(
       `${BACKEND_ADDRESS}/articles/search/b/fender/${searchParameter}`
+
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search

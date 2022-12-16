@@ -2,18 +2,15 @@ import { useRouter } from "next/router";
 import styles from "../styles/Slideshow.module.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import Link from "next/link";
 
 export default function Slideshow() {
   const router = useRouter();
 
   const clickBanner = (props) => {
-    let redirect = undefined;
-
-    if (props === 0) router.push({pathname:"./fender"})
-    if (props === 1) router.push({pathname:"./fender"})
-    if (props === 2) redirect = "c/bass"
-    router.push({pathname: "./category", query: {category: redirect}}, `/${redirect}`)
+    // redirects when clicking on banner image
+    if (props === 0) router.push({pathname:"./fender"});  // 1st image
+    if (props === 1) router.push({pathname:"./article", query: { brand: "fender", model: "Player Jaguar", price: 719, img: "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513.JPG"}}, "/article/jaguar");  // 2nd image
+    if (props === 2) router.push({pathname:"./article", query: { brand: "fender", model: "Player Meteora", price: 999, img: "https://i.imgur.com/2g2PghO.jpg"}}, "/article/meteora");  // 3rd image
   }
 
   return (
