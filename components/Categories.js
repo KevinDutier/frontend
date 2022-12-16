@@ -8,7 +8,11 @@ export default function Categories() {
   const router = useRouter();
 
   const images = [
-    { source: "/categories/folk.jpg", category: "folk", title: "Folk" },
+    {
+      source: "/categories/acoustic.jpg",
+      category: "acoustic",
+      title: "Acoustic",
+    },
     {
       source: "/categories/electric.jpg",
       category: "electric",
@@ -25,7 +29,7 @@ export default function Categories() {
     );
   }
 
-  // category images (folk, electric, bass image)
+  // category images (acoustic, electric, bass image)
   const categories = images.map((image, i) => {
     return (
       <div className={styles.imageContainer}>
@@ -49,7 +53,16 @@ export default function Categories() {
   return (
     <>
       <div className={styles.head}>
-        <Typography className={styles.ourCategories} sx= {{fontSize: "26px", margin: "44px 0px 0px 24px", fontWeight: "400"}}>OUR CATEGORIES</Typography>
+        <Typography
+          className={styles.ourCategories}
+          sx={{
+            fontSize: "26px",
+            margin: "44px 0px 0px 24px",
+            fontWeight: "400",
+          }}
+        >
+          OUR CATEGORIES
+        </Typography>
       </div>
 
       <div className={styles.categories}>{categories}</div>

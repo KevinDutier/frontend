@@ -9,7 +9,7 @@ import { Popover, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSort } from "@fortawesome/free-solid-svg-icons";
 
-export default function folk() {
+export default function acoustic() {
   // const router = useRouter();
 
   const [searchParameter, setSearchParameter] = useState("byPopularity");
@@ -86,7 +86,7 @@ export default function folk() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${BACKEND_ADDRESS}/articles/search/c/folk/${searchParameter}`
+      `${BACKEND_ADDRESS}/articles/search/c/acoustic/${searchParameter}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search
