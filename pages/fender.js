@@ -2,15 +2,15 @@ import styles from "../styles/Category.module.css";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { BACKEND_ADDRESS } from "../envVar";
 
 import { Popover, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSort } from "@fortawesome/free-solid-svg-icons";
 
-export default function bass() {
-  // const router = useRouter();
+export default function fender() {
+  const router = useRouter();
 
   const [searchParameter, setSearchParameter] = useState("byPopularity");
   const [guitars, setGuitars] = useState([]);
@@ -86,7 +86,7 @@ export default function bass() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${BACKEND_ADDRESS}/articles/search/c/bass/${searchParameter}`
+      `${BACKEND_ADDRESS}/articles/search/b/fender/${searchParameter}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search

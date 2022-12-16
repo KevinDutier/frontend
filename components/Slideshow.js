@@ -10,13 +10,9 @@ export default function Slideshow() {
   const clickBanner = (props) => {
     let redirect = undefined;
 
-    if (props === 0) redirect = "b/fender"
-    if (props === 1) redirect = "b/fender"
+    if (props === 0) router.push({pathname:"./fender"})
+    if (props === 1) router.push({pathname:"./fender"})
     if (props === 2) redirect = "c/bass"
-
-    console.log(redirect);
-
-    // FIXME: clicking here makes logo disappear
     router.push({pathname: "./category", query: {category: redirect}}, `/${redirect}`)
   }
 
