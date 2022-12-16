@@ -78,7 +78,7 @@ export default function Header() {
             </Link>
           </div>
           <Link href="./">
-            <img className={styles.logo} src="logo2.png" height="62" />
+            <img className={styles.logo} src="https://i.imgur.com/S9rJ9RD.png" height="62" />
           </Link>
           <div className={styles.headerItemsRight}>
             <FontAwesomeIcon
