@@ -55,7 +55,7 @@ export default function Header() {
     return (
       <div key={i} className={styles.popoverContainer}>
         <div className={styles.popover}>
-          <img className={styles.image} src={article.img} />
+          <img className={styles.image} src={article.img[0]} />
           <div className={styles.popoverText}>
             <p className={styles.brand}>{brandFormatted}</p>
             <p className={styles.model}>{article.model}</p>

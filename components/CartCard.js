@@ -40,7 +40,7 @@ export default function cartCard() {
     return (
       <div key={i} className={styles.container}>
         <div className={styles.left}>
-          <img className={styles.image} src={article.img} />
+          <img className={styles.image} src={article.img[0]} />
           <div className={styles.leftText}>
             <p className={styles.model}>{article.model}</p>
             <p className={styles.brand}>{brandFormatted}</p>

@@ -34,7 +34,7 @@ export default function Article() {
         <div className={styles.left}>
             {/* add carousel here */}
             <div >
-                <img className={styles.image} src={article.img}/>
+                <img className={styles.image} src={article.img[0]}/>
             </div>
                 <p>other images</p>
         </div>
