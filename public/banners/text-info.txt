@@ -1,0 +1,3 @@
+font: Dotum
+small text: 22px
+large text: 48px bold

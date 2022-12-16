@@ -4,6 +4,6 @@
     align-items: center;
 }
 
-.legend {
-    color: red;
+.carousel {
+    cursor: pointer;
 }
