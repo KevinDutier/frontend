@@ -65,6 +65,11 @@
   margin-left: 14px;
 }
 
+.emptyCart {
+  color :#6d6d6d;
+  margin: 10px;
+}
+
 .brand {
   margin-top: 10px;
   font-size: 20px;

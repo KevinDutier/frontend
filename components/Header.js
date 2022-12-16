@@ -43,7 +43,10 @@ export default function Header() {
     setTotal(total - props.price);
   }
 
-  // maps the articles from the cart
+  // displayed if cart is empty
+  const cartEmpty = <p className={styles.emptyCart}>Your cart is empty.</p>;
+
+  // displayed if cart has items: maps the articles from the cart
   const cartArticles = cart.map((article, i) => {
     // capitalizes first letter
     const brandFormatted =
@@ -67,6 +70,14 @@ export default function Header() {
       </div>
     );
   });
+
+  // displayed if cart has items: subtotal and order buttoni
+  const subtotalAndOrder = <Typography className={styles.popoverLast}>
+  <Typography>Subtotal: {total} €</Typography>
+  <Link href="./cartReview">
+    <button className={styles.button}>Order</button>
+  </Link>
+</Typography>
 
   return (
     <div>
@@ -99,13 +110,8 @@ export default function Header() {
                 horizontal: "right",
               }}
             >
-              {cartArticles}
-              <Typography className={styles.popoverLast}>
-                <Typography>Subtotal: {total} €</Typography>
-                <Link href="./cartReview">
-                  <button className={styles.button}>Order</button>
-                </Link>
-              </Typography>
+              {cart.length ? cartArticles : cartEmpty} {/* if cart has items, display cartArticles. if cart is empty, display cartEmpty */}
+              {cart.length ? subtotalAndOrder: <></> } {/* if cart has items, display subtotalAndOrder. if cart is empty, display nothing */}
             </Popover>
           </div>
         </div>
