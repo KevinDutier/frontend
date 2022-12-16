@@ -9,8 +9,8 @@ export default function Slideshow() {
   const clickBanner = (props) => {
     // redirects when clicking on banner image
     if (props === 0) router.push({pathname:"./fender"});  // 1st image
-    if (props === 1) router.push({pathname:"./article", query: { brand: "fender", model: "Player Jaguar", price: 719, img: "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513.JPG"}}, "/article/jaguar");  // 2nd image
-    if (props === 2) router.push({pathname:"./article", query: { brand: "fender", model: "Player Meteora", price: 999, img: "https://i.imgur.com/2g2PghO.jpg"}}, "/article/meteora");  // 3rd image
+    if (props === 1) router.push({pathname:"./article", query: { brand: "fender", model: "Player Jaguar", price: 719, img: ["https://www.woodbrass.com/images/woodbrass/FMIC+0146303513.JPG", "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513.JPG", "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513.JPG"]}}, "/article/jaguar");  // 2nd image
+    if (props === 2) router.push({pathname:"./article", query: { brand: "fender", model: "Player Meteora", price: 999, img: ["https://i.imgur.com/2g2PghO.jpg", "https://i.imgur.com/2g2PghO.jpg", "https://i.imgur.com/2g2PghO.jpg"]}}, "/article/meteora");  // 3rd image
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Slideshow() {
           showThumbs={false}  // hides thumbnails
           swipeable={true}  // allows user to drag images with the mouse (default: true)
           emulateTouch={true}  // enables swipe on non-touch screens
-          stopOnHover={true}  // stops slideshow on hover
+          stopOnHover={false}  // stops slideshow on hover
           useKeyboardArrows={true}  // enables user to use keyboard arrows
           onClickItem={(index) => clickBanner(index)}
         >

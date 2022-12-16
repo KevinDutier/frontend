@@ -1,5 +1,4 @@
 import styles from "../styles/ProductCard.module.css";
-import SortMenu from "./SortMenu";
 import { TailSpin } from "react-loader-spinner";
 import { useRouter } from "next/router";
 
