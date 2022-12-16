@@ -1,63 +1,58 @@
 import styles from "../styles/Categories.module.css";
 import "react-multi-carousel/lib/styles.css";
-import Carousel from "react-multi-carousel";
-// import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
+import { Typography } from "@mui/material";
 
 export default function Categories() {
   const router = useRouter();
-  
+
   const images = [
-    { source: "/categories/folk.jpg", category: "folk"},
-    { source: "/categories/electric.jpg", category: "electric"},
-    { source: "/categories/classical.jpg", category: "classical"},
-    { source: "/categories/bass.jpg", category: "bass"},
-    { source: "/categories/amps.jpg", category: "amps"},
-    { source: "/categories/accessories.jpg", category: "accessories"},
-  ]
+    { source: "/categories/folk.jpg", category: "folk", title: "Folk" },
+    {
+      source: "/categories/electric.jpg",
+      category: "electric",
+      title: "Electric",
+    },
+    { source: "/categories/bass.jpg", category: "bass", title: "Bass" },
+  ];
 
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
-
+  // function that redirects to category page
   function toCategoryPage(props) {
-    router.push({pathname: "./category", query: {category: `c/${props}`}}, `/${props}`)
+    router.push(
+      { pathname: "./category", query: { category: `c/${props}` } },
+      `/${props}`
+    );
   }
+
+  // category images (folk, electric, bass image)
+  const categories = images.map((image, i) => {
+    return (
+      <div className={styles.imageContainer}>
+        <Image
+          key={i}
+          src={image.source}
+          className={styles.image}
+          width={300}
+          height={300}
+        />
+        <div
+          className={styles.imageOverlay}
+          onClick={() => toCategoryPage(image.category)}
+        >
+          <div className={styles.imageTitle}>{image.title}</div>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <>
       <div className={styles.head}>
-        <h2 className={styles.headText}>OUR CATEGORIES</h2>
+        <Typography className={styles.ourCategories} sx= {{fontSize: "26px", margin: "44px 0px 0px 24px", fontWeight: "400"}}>OUR CATEGORIES</Typography>
       </div>
-      <Carousel
-      className={styles.carousel}
-      ssr
-      partialVisbile={false}
-      // deviceType={deviceType}
-      showDots={true}
-      itemClass="image-item"
-      responsive={responsive}
-    >
-      {images.map((image, i) => {
-        return (
-            <img className={styles.categoryImage} key={i}  onClick={() => toCategoryPage(image.category)} src={image.source} draggable={false} height="300px" width="300px" />
-        );
-      })}
-    </Carousel>
+
+      <div className={styles.categories}>{categories}</div>
     </>
   );
 }
