@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import { useRouter } from "next/router";
 import { BACKEND_ADDRESS } from "../envVar";
+// import dotenv from "dotenv"
 
 import { Popover, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -86,7 +87,7 @@ export default function category() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${BACKEND_ADDRESS}/articles/search/${router.query.category}/${searchParameter}`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.category}/${searchParameter}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search
