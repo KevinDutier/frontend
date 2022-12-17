@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { removeArticle } from "../reducers/cart";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { compose } from "@reduxjs/toolkit";
 
 export default function CartCard() {
   const dispatch = useDispatch();
@@ -26,11 +27,11 @@ export default function CartCard() {
 
   // calculates total price
   useEffect(() => {
+    setTotal(0);
     for (let i = 0; i < cart.length; i++) {
       setTotal((total += parseInt(cart[i].price)));
     }
   }, [update]);
-  
 
   const articles = cart.map((article, i) => {
     // capitalizes first letter
