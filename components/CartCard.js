@@ -6,7 +6,7 @@ import { removeArticle } from "../reducers/cart";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-export default function cartCard() {
+export default function CartCard() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);
   const [total, setTotal] = useState(0);
