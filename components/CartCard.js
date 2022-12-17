@@ -1,4 +1,4 @@
-import styles from "../styles/CartCard.module.css";
+import styles from "../styles/a.module.css";
 
 // redux imports
 import { useDispatch } from "react-redux";

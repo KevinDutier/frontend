@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import { useRouter } from "next/router";
-import { BACKEND_ADDRESS } from "../envVar";
 
 import { Popover, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
