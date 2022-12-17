@@ -45,7 +45,7 @@ export default function CartCard() {
             <p className={styles.brand}>{brandFormatted}</p>
             <p className={styles.model}>{article.model}</p>
             <p className={styles.price}>{article.price} €</p>
-            <p className={styles.remove} onClick={() => handleRemoveClick(article, i)}>remove articlzze</p>
+            <p className={styles.remove} onClick={() => handleRemoveClick(article, i)}>remove article</p>
           </div>
         </div>
       </div>
