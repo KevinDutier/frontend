@@ -17,9 +17,11 @@
   text-align: center;  /* centers thumbnails horizontally */
 }
 
-.carousel .thumb  {
-  width: 5%;
-  height: 50px;
+.carousel .thumbs  {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 200px;
 }
 
 .imageContainer {
@@ -31,8 +33,8 @@
   /* FIXME: fix height */
   /* max-width: 100%; */
   /* max-height: 640px; */
-  max-height: 34vw;
-  min-height: 500px; /* NOTE: this messes up the thumbnail height*/
+  height: 33vw;  /* actual height of the downscaled image */
+  min-height: 500px; /* minimum height of the actual image, but it messes up the thumbnail size */
   object-fit: scale-down;
 }
 

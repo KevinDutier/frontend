@@ -22,7 +22,7 @@ export default function Slideshow() {
           interval="4000"  // how long before showing next slide
           transitionTime="700"  // how long is the animation
           infiniteLoop={true}  // loops back to first image after reaching the last one
-          showStatus={false}
+          showStatus={false}  // hides "1 of 3" in the corner
           showThumbs={false}  // hides thumbnails
           swipeable={true}  // allows user to drag images with the mouse (default: true)
           emulateTouch={true}  // enables swipe on non-touch screens
