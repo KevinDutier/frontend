@@ -84,7 +84,7 @@ export default function acoustic() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${BACKEND_ADDRESS}/articles/search/c/acoustic/${searchParameter}`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/c/acoustic/${searchParameter}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search

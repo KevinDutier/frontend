@@ -57,7 +57,7 @@ export default function category() {
               closePopover();
             }}
           >
-            by popularity
+            popularity
           </Typography>
           <Typography
             className={styles.popoverItem}
@@ -66,7 +66,7 @@ export default function category() {
               closePopover();
             }}
           >
-            by brand (A-Z)
+            brand (A-Z)
           </Typography>
           <Typography
             className={styles.popoverItemLast}
@@ -75,7 +75,7 @@ export default function category() {
               closePopover();
             }}
           >
-            by price (lowest to highest)
+            price (ascending)
           </Typography>
         </Popover>
       </>
