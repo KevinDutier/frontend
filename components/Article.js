@@ -48,16 +48,6 @@ export default function Article() {
       {/* LEFT SECTION (contains carousel) */}
       <div className={styles.left}>
         <Carousel
-          className={styles.carousel}
-          autoPlay={false} // disables autoplay
-          transitionTime="700" // how long is the animation
-          infiniteLoop={true} // loops back to first image after reaching the last one
-          showStatus={false} // hides "1 of 3" in the corner
-          showThumbs={false} // hides thumbnails
-          // thumbWidth={64}
-          swipeable={true} // allows user to drag images with the mouse (default: true)
-          emulateTouch={true} // enables swipe on non-touch screens
-          useKeyboardArrows={true} // enables user to use keyboard arrows
         >
           {images}
         </Carousel>
