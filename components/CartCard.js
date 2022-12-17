@@ -42,8 +42,8 @@ export default function CartCard() {
         <div className={styles.left}>
           <img className={styles.image} src={article.img[0]} />
           <div className={styles.leftText}>
-            <p className={styles.model}>{article.model}</p>
             <p className={styles.brand}>{brandFormatted}</p>
+            <p className={styles.model}>{article.model}</p>
             <p className={styles.price}>{article.price} €</p>
             <p className={styles.remove} onClick={() => handleRemoveClick(article, i)}>remove article</p>
           </div>

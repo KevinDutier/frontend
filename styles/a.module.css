@@ -29,14 +29,14 @@
 }
 
 .model {
-  font-size: 44px;
-  font-weight: 400;
-  margin: 60px 0 -36px 0;
+  font-size: 34px;
+  font-weight: 300;
 }
 
 .brand {
-  font-size: 34px;
-  font-weight: 300;
+  font-size: 44px;
+  font-weight: 400;
+  margin: 60px 0 -36px 0;
 }
 
 .price {
