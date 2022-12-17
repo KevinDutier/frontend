@@ -7,12 +7,13 @@ import {
   faTruckFast,
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
-import { Typography } from "@mui/material";
-import { Carousel } from "react-responsive-carousel";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+// import { Carousel } from "react-responsive-carousel";
 
 // redux imports
 import { useDispatch } from "react-redux";
-import { addArticle, removeArticle } from "../reducers/cart";
+import { addArticle } from "../reducers/cart";
 
 export default function Article() {
   // gets the article data from the previous page
@@ -34,11 +35,20 @@ export default function Article() {
   const brandFormatted =
     article?.brand.charAt(0).toUpperCase() + article?.brand.slice(1);
 
+  // alice carousel function to prevent issues when dragging images
+  const handleDragStart = (e) => e.preventDefault();
+
   // maps the article's images
   const images = article.img.map((image, i) => {
     return (
       <div key={i} className={styles.imageContainer}>
-        <img key={i} className={styles.image} src={image} />
+        <img
+          key={i}
+          className={styles.image}
+          src={image}
+          onDragStart={handleDragStart}
+          role="presentation"
+        />
       </div>
     );
   });
@@ -47,6 +57,18 @@ export default function Article() {
     <div className={styles.main}>
       {/* LEFT SECTION (contains carousel) */}
       <div className={styles.left}>
+        <AliceCarousel
+          className={styles.carousel}
+          mouseTracking
+          items={images}
+          autoWidth={true}
+          infinite={true}
+          keyboardNavigation={true}
+        />
+      </div>
+
+      {/* original carousel, made with react-reponsive carousel */}
+      {/* <div className={styles.left}>
         <Carousel
           className={styles.carousel}
           autoPlay={false} // disables autoplay
@@ -60,7 +82,7 @@ export default function Article() {
         >
           {images}
         </Carousel>
-      </div>
+      </div> */}
 
       {/* RIGHT SECTION */}
       <div className={styles.right}>
