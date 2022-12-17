@@ -27,7 +27,6 @@ export default function CartCard() {
 
   // calculates total price
   useEffect(() => {
-    setTotal(0);
     for (let i = 0; i < cart.length; i++) {
       setTotal((total += parseInt(cart[i].price)));
     }
