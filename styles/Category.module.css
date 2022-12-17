@@ -13,8 +13,10 @@
 
 .popoverItem {
   cursor: pointer;
+  padding: 0 6px
 }
 
 .popoverItemLast {
   cursor: pointer;
+  padding: 0 6px
 }

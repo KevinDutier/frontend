@@ -56,7 +56,7 @@ export default function electric() {
               closePopover();
             }}
           >
-            by popularity
+            popularity
           </Typography>
           <Typography
             className={styles.popoverItem}
@@ -65,7 +65,7 @@ export default function electric() {
               closePopover();
             }}
           >
-            by brand (A-Z)
+            brand (A-Z)
           </Typography>
           <Typography
             className={styles.popoverItemLast}
@@ -74,7 +74,7 @@ export default function electric() {
               closePopover();
             }}
           >
-            by price (lowest to highest)
+            price (low to high)
           </Typography>
         </Popover>
       </>

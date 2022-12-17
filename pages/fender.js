@@ -57,17 +57,17 @@ export default function fender() {
               closePopover();
             }}
           >
-            by popularity
+            popularity
           </Typography>
-          <Typography
+          {/* <Typography
             className={styles.popoverItem}
             onClick={() => {
               setSearchParameter("byBrand");
               closePopover();
             }}
           >
-            by brand (A-Z)
-          </Typography>
+            brand (A-Z)
+          </Typography> */}
           <Typography
             className={styles.popoverItemLast}
             onClick={() => {
@@ -75,7 +75,7 @@ export default function fender() {
               closePopover();
             }}
           >
-            by price (lowest to highest)
+            price (low to high)
           </Typography>
         </Popover>
       </>

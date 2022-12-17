@@ -75,7 +75,7 @@ export default function category() {
               closePopover();
             }}
           >
-            price (ascending)
+            price (low to high)
           </Typography>
         </Popover>
       </>
