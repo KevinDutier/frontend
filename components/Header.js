@@ -1,4 +1,5 @@
 import styles from "../styles/Header.module.css";
+import AboutPopup from "./AboutPopup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -85,7 +86,7 @@ export default function Header() {
         <div className={styles.headerItems}>
           <div className={styles.headerItemsLeft}>
             <Link href="./">
-              <p className={styles.about}>About</p>
+              <AboutPopup />
             </Link>
           </div>
           <Link href="./">

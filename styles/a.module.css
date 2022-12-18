@@ -78,7 +78,7 @@
   margin: 0;
 }
 
-.button {
+/* .button {
   background-color: #151515;
   width: 100px;
   border-radius: 8px;
@@ -108,4 +108,4 @@
 }
 .button:active {
   transform: translateY(2px);
-}
+} */

@@ -1,4 +1,5 @@
 import styles from "../styles/a.module.css";  // CartCard style
+import OrderPopup from "./OrderPopup";
 
 // redux imports
 import { useDispatch } from "react-redux";
@@ -61,7 +62,8 @@ export default function CartCard() {
       <div className={styles.rightContainer}>
         <div className={styles.right}>
           <p className={styles.total}>Total ({articles.length} articles): {total} €</p>
-          <button className={styles.button}>Order</button>
+          <OrderPopup />
+          {/* <button className={styles.button}>Order</button> */}
         </div>
       </div>
     </div>
