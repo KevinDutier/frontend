@@ -21,7 +21,7 @@ export default function OrderPopup(props) {
             <button className={styles.close} onClick={close}>
               &times;
             </button>
-            <div className={styles.header}> Order confirmed </div>
+            <div className={styles.header}> Order confirm </div>
             <div className={styles.content}>
               {cartEmptyCheck()}
             </div>
