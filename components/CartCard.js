@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { removeArticle } from "../reducers/cart";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { compose } from "@reduxjs/toolkit";
 
 export default function CartCard() {
   const dispatch = useDispatch();
