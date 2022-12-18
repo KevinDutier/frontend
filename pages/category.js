@@ -11,7 +11,7 @@ import { faSort } from "@fortawesome/free-solid-svg-icons";
 export default function category() {
   const router = useRouter();
 
-  const [searchParameter, setSearchParameter] = useState("byPopularity");
+  const [sortBy, setSortBy] = useState("byPopularity");
   const [guitars, setGuitars] = useState([]);
   const [productCard, setProductCard] = useState(<></>); // before the search result comes, product card is empty
   const [anchorEl, setAnchorEl] = useState(null); // popover menu anchor
@@ -53,7 +53,7 @@ export default function category() {
           <Typography
             className={styles.popoverItem}
             onClick={() => {
-              setSearchParameter("byPopularity");
+              setSortBy("byPopularity");
               closePopover();
             }}
           >
@@ -62,7 +62,7 @@ export default function category() {
           <Typography
             className={styles.popoverItem}
             onClick={() => {
-              setSearchParameter("byBrand");
+              setSortBy("byBrand");
               closePopover();
             }}
           >
@@ -71,7 +71,7 @@ export default function category() {
           <Typography
             className={styles.popoverItemLast}
             onClick={() => {
-              setSearchParameter("byPrice");
+              setSortBy("byPrice");
               closePopover();
             }}
           >
@@ -85,7 +85,9 @@ export default function category() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.category}/${searchParameter}`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS_LOCAL}/articles/search/${router.query.parameter}/${sortBy}`
+      // `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.parameter}/${sortBy}`
+      // `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/category/acoustic/byPrice`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search
@@ -93,14 +95,14 @@ export default function category() {
   }
 
   useEffect(() => {
-    // execute search function once upon loading the page, and then when searchParameter is updated
+    // execute search function once upon loading the page, and then when sortBy is updated
     search();
-  }, [searchParameter]);
+  }, [sortBy]);
 
-  // once guitars or searchParameter has been updated, display results on the page
+  // once guitars or sortBy has been updated, display results on the page
   useEffect(() => {
     setProductCard(<ProductCard guitars={guitars} />);
-  }, [guitars, searchParameter]);
+  }, [guitars, sortBy]);
 
   return (
     <>

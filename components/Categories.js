@@ -10,21 +10,21 @@ export default function Categories() {
   const images = [
     {
       source: "/categories/acoustic.jpg",
-      category: "acoustic",
+      parameter: "category/acoustic",
       title: "Acoustic",
     },
     {
       source: "/categories/electric.jpg",
-      category: "electric",
+      parameter: "category/electric",
       title: "Electric",
     },
-    { source: "/categories/bass.jpg", category: "bass", title: "Bass" },
+    { source: "/categories/bass.jpg", parameter: "category/bass", title: "Bass" },
   ];
 
   // function that redirects to category page
   function toCategoryPage(props) {
     router.push(
-      { pathname: "./category", query: { category: `c/${props}` } },
+      { pathname: "./category", query: { parameter: props } },
       `/${props}`
     );
   }
@@ -42,7 +42,7 @@ export default function Categories() {
         />
         <div
           className={styles.imageOverlay}
-          onClick={() => toCategoryPage(image.category)}
+          onClick={() => toCategoryPage(image.parameter)}
         >
           <div className={styles.imageTitle}>{image.title}</div>
         </div>

@@ -84,7 +84,7 @@ export default function bass() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/c/bass/${searchParameter}`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/bass/${searchParameter}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search

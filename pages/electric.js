@@ -84,7 +84,7 @@ export default function electric() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/c/electric/${searchParameter}`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/electric/${searchParameter}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search

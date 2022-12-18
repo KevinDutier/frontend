@@ -85,7 +85,7 @@ export default function fender() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/b/fender/${searchParameter}`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS_LOCAL}/articles/search/brand/fender/${searchParameter}`
 
     ).then((res) => res.json());
 
