@@ -12,7 +12,7 @@ import { useState } from "react";
 // redux imports
 import { useDispatch } from "react-redux";
 import { removeArticle } from "../reducers/cart";
-import { removeArticlePrice } from "../reducers/cartTotal";
+import { removeArticlePrice, resetCartTotal } from "../reducers/cartTotal";
 import { useSelector } from "react-redux";
 
 export default function Header() {
@@ -37,6 +37,7 @@ export default function Header() {
   function handleRemoveClick(props, index) {
     dispatch(removeArticle(index));  // remove article from cart
     dispatch(removeArticlePrice(props));  // remove article price from cart total
+    if (cart.length === 1) dispatch(resetCartTotal());  // reset cart total to 0
   }
 
   // displayed if cart is empty

@@ -17,11 +17,11 @@ export const cartTotalSlice = createSlice({
     removeArticlePrice: (state, action) => {
       state.value -= parseInt(action.payload.price);
     },
-    emptyCartPrice: (state, action) => {
+    resetCartTotal: (state, action) => {
       state.value = 0;
     },
   },
 });
 
-export const { addArticlePrice, removeArticlePrice, emptyCartPrice } = cartTotalSlice.actions;
+export const { addArticlePrice, removeArticlePrice, resetCartTotal } = cartTotalSlice.actions;
 export default cartTotalSlice.reducer;

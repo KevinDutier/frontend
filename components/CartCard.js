@@ -4,7 +4,7 @@ import OrderPopup from "./OrderPopup";
 // redux imports
 import { useDispatch } from "react-redux";
 import { removeArticle } from "../reducers/cart";
-import { removeArticlePrice } from "../reducers/cartTotal";
+import { removeArticlePrice, resetCartTotal } from "../reducers/cartTotal";
 import { useSelector } from "react-redux";
 
 export default function CartCard() {
@@ -14,8 +14,9 @@ export default function CartCard() {
 
   // removing an article
   function handleRemoveClick(props, index) {
-    dispatch(removeArticle(index));
-    dispatch(removeArticlePrice(props));
+    dispatch(removeArticle(index));  // remove article from cart
+    dispatch(removeArticlePrice(props));  // remove article price from cart total
+    if (cart.length === 1) dispatch(resetCartTotal());  // reset cart total to 0
   };
 
   const articles = cart.map((article, i) => {
