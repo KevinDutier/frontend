@@ -15,31 +15,9 @@ export default function OrderPopup() {
             <button className={styles.close} onClick={close}>
               &times;
             </button>
-            <div className={styles.header}> About </div>
+            <div className={styles.header}> Order confirmed </div>
             <div className={styles.content}>
-              Hitoshi guitars is a fictional guitar retailer website. The frontend was made with React and Next JS, while the backend uses Express JS and Mongoose. The articles' data is stored on a database (MongoDB).
-              <br />
-              <div className={styles.checkOut}>
-                Check out the github repos for more information:
-              </div>
-              <br />
-              <div className={styles.links}>
-                <a
-                  className={styles.link}
-                  href="https://github.com/KevinDutier/hitoshi-guitars-frontend"
-                  target="_blank"
-                >
-                  Hitoshi-guitars frontend repo
-                </a>
-                <br />
-                <a
-                  className={styles.link}
-                  href="https://github.com/KevinDutier/hitoshi-guitars-backend"
-                  target="_blank"
-                >
-                  Hitoshi-guitars backend repo
-                </a>
-              </div>
+              Your items will be shipping shortly. <br /> Thank you for your purchase !
             </div>
           </div>
         )}

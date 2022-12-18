@@ -49,25 +49,13 @@
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
+  text-align: center;
 }
 .modal > .actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
   text-align: center;
-}
-.checkOut {
-  padding-top: 0.7rem;
-}
-.links {
-  display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 0.3rem;
-}
-.link {
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
 }
 .modal > .close {
   cursor: pointer;
