@@ -3,6 +3,9 @@
   cursor: pointer;
   font-size: 20px;
 }
+.about:hover {
+  color: #b9b9b9;
+}
 
 .modal {
   font-size: 16px;

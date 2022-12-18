@@ -12,21 +12,6 @@
   align-items: center;
 }
 
-/* .about {
-  margin-left: 14px;
-  cursor: pointer;
-  font-size: 20px;
-} */
-
-/* .title {
-    font-size: 22px;
-    width: 10px;
-} */
-
-/* .headerItemsLeft {
-
-} */
-
 .logo {
   cursor: pointer;
 }
@@ -35,6 +20,9 @@
   margin-right: 14px;
   cursor: pointer;
   font-size: 26px;
+}
+.cart:hover {
+  color: #b9b9b9;
 }
 
 /* cart popover */
@@ -90,6 +78,9 @@
   font-size: 22px;
   margin: 20px 10px 0px 0px;
 }
+.xIcon:hover {
+  color: #b9b9b9;
+}
 
 .popoverLast {
   padding: 10px 14px;
@@ -124,6 +115,7 @@
   align-items: center;
 }
 .button:hover {
-  background-color: #4e4e4e;
+  background-color: #b9b9b9;
+
 }
 /* end of cart popover style */
