@@ -4,18 +4,21 @@ import OrderPopup from "./OrderPopup";
 // redux imports
 import { useDispatch } from "react-redux";
 import { removeArticle } from "../reducers/cart";
+import { removeArticlePrice } from "../reducers/cartTotal";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
 export default function CartCard() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);
+  const cartTotal = useSelector((state) => state.cartTotal.value);
   const [total, setTotal] = useState(0);
   const [update, setUpdate] = useState(0);
 
   // removing an article
   function handleRemoveClick(props, index) {
     dispatch(removeArticle(index));
+    dispatch(removeArticlePrice(props));
     // resets total price
     setTotal(total - props.price);
   };
@@ -60,7 +63,7 @@ export default function CartCard() {
 
       <div className={styles.rightContainer}>
         <div className={styles.right}>
-          <p className={styles.total}>Total ({articles.length} articles): {total} €</p>
+          <p className={styles.total}>Total ({articles.length} articles): {cartTotal} €</p>
           <OrderPopup />
           {/* <button className={styles.button}>Order</button> */}
         </div>

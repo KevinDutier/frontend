@@ -14,21 +14,19 @@ import "react-alice-carousel/lib/alice-carousel.css";
 // redux imports
 import { useDispatch } from "react-redux";
 import { addArticle } from "../reducers/cart";
+import { addArticlePrice } from "../reducers/cartTotal";
 
 export default function Article() {
   // gets the article data from the previous page
   const router = useRouter();
   const article = router.query;
-
+  
   const dispatch = useDispatch();
 
   // passes the article's data and dispatches the function from the reducer (add)
   function handleAddClick(props) {
-    dispatch(addArticle(props));
-  }
-
-  function resetCart() {
-    dispatch(emptyCart());
+    dispatch(addArticle(props));  // add item to cart
+    dispatch(addArticlePrice(props));  // add item price to cart total
   }
 
   // capitalizes first letter

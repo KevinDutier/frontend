@@ -12,36 +12,31 @@ import { useState } from "react";
 // redux imports
 import { useDispatch } from "react-redux";
 import { removeArticle } from "../reducers/cart";
+import { removeArticlePrice } from "../reducers/cartTotal";
 import { useSelector } from "react-redux";
 
 export default function Header() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);
+  const cartTotal = useSelector((state) => state.cartTotal.value);
   const [anchorEl, setAnchorEl] = useState(null);  // popover menu anchor
-  const [total, setTotal] = useState(0);
 
   // opens the popover
   function openPopover(event) {
-    // calculates total price
-    for (let i = 0; i < cart.length; i++) {
-      setTotal((total += parseInt(cart[i].price)));
-    }
     // sets the popover's anchor to the cart icon
     setAnchorEl(event.currentTarget);
   }
 
   // closes the popover
   function closePopover() {
-    // wait for popover to close, then reset total
-    setTimeout(function resetTotal() {setTotal(0)}, 130);
     // sets anchor to null
     setAnchorEl(null);
   }
 
   // passes the article's index and dispatches the function from the reducer (remove)
   function handleRemoveClick(props, index) {
-    dispatch(removeArticle(index));
-    setTotal(total - props.price);
+    dispatch(removeArticle(index));  // remove article from cart
+    dispatch(removeArticlePrice(props));  // remove article price from cart total
   }
 
   // displayed if cart is empty
@@ -72,9 +67,9 @@ export default function Header() {
     );
   });
 
-  // displayed if cart has items: subtotal and order buttoni
+  // displayed if cart has items: subtotal and order button
   const subtotalAndOrder = <Typography className={styles.popoverLast}>
-  <Typography>Subtotal: {total} €</Typography>
+  <Typography>Subtotal: {cartTotal} €</Typography>
   <Link href="./cartReview">
     <button className={styles.button}>Order</button>
   </Link>

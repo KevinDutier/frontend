@@ -5,6 +5,7 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import cart from "../reducers/cart";
+import cartTotal from "../reducers/cartTotal";
 
 // redux-persist imports
 import { persistStore, persistReducer } from "redux-persist";
@@ -12,7 +13,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
 
 function App({ Component, pageProps }) {
-  const reducers = combineReducers({ cart });
+  const reducers = combineReducers({ cart, cartTotal });
   const persistConfig = { key: "cart", storage };
 
   const store = configureStore({
