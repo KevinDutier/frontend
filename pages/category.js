@@ -85,9 +85,7 @@ export default function category() {
   // search function executed upon loading the page
   async function search() {
     const request = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS_LOCAL}/articles/search/${router.query.parameter}/${sortBy}`
-      // `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.parameter}/${sortBy}`
-      // `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/category/acoustic/byPrice`
+      `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.parameter}/${sortBy}`
     ).then((res) => res.json());
 
     // search for guitars, then set guitars to the result of the search
