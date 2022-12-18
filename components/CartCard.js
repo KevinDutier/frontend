@@ -48,7 +48,7 @@ export default function CartCard() {
       <div className={styles.rightContainer}>
         <div className={styles.right}>
           <p className={styles.total}>Total : {cartTotal} €</p>
-          <OrderPopup />
+          <OrderPopup cart={cart}/>
           {/* <button className={styles.button}>Order</button> */}
         </div>
       </div>
