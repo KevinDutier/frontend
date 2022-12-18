@@ -33,12 +33,12 @@ export default function Categories() {
   const categories = images.map((image, i) => {
     return (
       <div className={styles.imageContainer}>
-        <Image
+        <img
           key={i}
           src={image.source}
           className={styles.image}
-          width={300}
-          height={300}
+          // width={300}
+          // height={300}
         />
         <div
           className={styles.imageOverlay}

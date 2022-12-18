@@ -26,7 +26,7 @@
 .categories {
   display: flex;
   width: 69vw;
-  min-width: 1000px;
+  /* min-width: 1000px; */
   justify-content: space-between;
   align-items: center;
   margin: 14px auto;
@@ -42,7 +42,7 @@
 /* main container (image and text) */
 .imageContainer {
   position: relative;
-  width: 300px;
+  width: 16vw;
 }
 
 /* contains the text and the semi-opaque layer */
@@ -55,7 +55,6 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
   color: white;
-  font-family: "Roboto", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,8 +82,8 @@
   transform: translateY(0);
 }
 
-/* just contains the title */
+/* just contains the title (Acoustic, Electric, Bass) */
 .imageTitle {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 500;
 }
