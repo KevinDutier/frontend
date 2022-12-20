@@ -1,5 +1,4 @@
 import styles from "../styles/SearchBar.module.css";
-import { TextField } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +7,6 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 export default function SearchBar() {
   const router = useRouter();
   const [inputText, setInputText] = useState("");
-
-  // const error = inputText === "";
 
   function inputHandler(e) {
     //convert input text to lower case
