@@ -32,7 +32,7 @@ export default function Categories() {
   // category images (acoustic, electric, bass image)
   const categories = images.map((image, i) => {
     return (
-      <div className={styles.imageContainer}>
+      <div className={styles.imageContainer} key={i} >
         <img
           key={i}
           src={image.source}

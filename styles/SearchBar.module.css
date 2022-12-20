@@ -1,0 +1,27 @@
+.searchBarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchBarMui {
+  background-color: white;
+  border-radius: 4px;
+  width: 20vw;
+}
+
+.searchBar {
+  width: 20vw;
+  border-radius: 4px 0 0 4px;
+  border: 0px;
+  padding: 8px 14px;
+}
+
+.searchIcon {
+  /* background-color: white; */
+  color: black;
+  background-color: white;
+  padding: 8px 8px;
+  border-radius: 0 4px 4px 0;
+
+}

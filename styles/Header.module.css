@@ -14,10 +14,16 @@
 
 .logo {
   cursor: pointer;
+  margin-left: 16px;
+}
+
+.headerItemsRight {
+  display: flex;
+  align-items: center;
 }
 
 .cart {
-  margin-right: 14px;
+  margin: 0 16px;
   cursor: pointer;
   font-size: 26px;
 }
