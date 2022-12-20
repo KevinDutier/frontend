@@ -6,13 +6,12 @@ https://hitoshi-guitars.vercel.app/
 Hitoshi guitars is a fictional guitar retailer website. The frontend was made with React and Next JS, while the backend uses Express JS and Mongoose.
 The article's data is stored on a database (MongoDB).
 
-The website allows the user the view browse through the articles, sort them by popularity, brand or price, and add them to their cart.
+The website allows the user to search through the articles (by typing a keyword such as a brand, a category, or a model), then browse the results, sort them by popularity, brand or price, and add them to their cart.
 Hitoshi-guitars uses redux-persist, meaning the cart items will remain local storage.
 
-## Overview
+## Demo
 
-https://user-images.githubusercontent.com/111971458/208428431-6e997820-c42f-4334-a637-b05b443c4e6f.mp4
-
+https://user-images.githubusercontent.com/111971458/208689191-6a59e17a-593a-4656-b990-dce770e51f9e.mp4
 
 ## Technologies used
 
