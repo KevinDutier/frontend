@@ -29,29 +29,10 @@ export default function SearchBar() {
       { pathname: "./category", query: { parameter: inputText } },
       `/${inputText}`
     );
-
-    // TODO: if already on ./category, just launch search without router.push()
   }
 
-  // TODO: make it execute search when pressing ENTER as well
   return (
     <div className={styles.searchBarContainer}>
-      {/* <TextField
-        className={styles.searchBarMui}
-        label="Search"
-        variant="filled"
-        margin="dense"
-        size="small"
-        onChange={inputHandler}
-        // error={error}
-        // helperText={error ? "Cannot be empty" : "Perfect!"}
-      />
-      <FontAwesomeIcon
-        icon={faMagnifyingGlass}
-        className={styles.searchIcon}
-        onClick={() => handleSearchClick()}
-      /> */}
-
       <input
         className={styles.searchBar}
         type="text"
@@ -60,9 +41,6 @@ export default function SearchBar() {
         minLength="1"
         maxLength="28"
       />
-      {/* <button className={styles.button} onClick={() => handleSearchClick()}>
-        Search
-      </button> */}
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className={styles.searchIcon}
