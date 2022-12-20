@@ -67,7 +67,6 @@ export default function SearchBar() {
         icon={faMagnifyingGlass}
         className={styles.searchIcon}
         onClick={() => handleSearchClick()}
-        // style={{fontSize: 19}}
       />
     </div>
   );

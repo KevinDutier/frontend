@@ -11,10 +11,8 @@
 }
 
 .searchBarContainer {
-  /* border: 1px red solid; */
-  width: 21vw;
+  width: 26vw;
   height: 40px;
-
 }
 
 .searchBar {
@@ -37,8 +35,6 @@
   background-color: white;
   padding: 12px 20px;
   border-radius: 0 4px 4px 0;
-  /* font-size: 19px; */
-  
 }
 
 .button {
