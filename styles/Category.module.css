@@ -1,3 +1,9 @@
+.noResult {
+  width: 100%;
+  text-align: center;
+}
+
+/* "sort by" popover */
 .sortBy {
   /* add shadow */
   position: absolute;
@@ -20,3 +26,4 @@
   cursor: pointer;
   padding: 0 6px
 }
+/* end of "sort by" popover */

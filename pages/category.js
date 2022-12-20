@@ -13,6 +13,7 @@ export default function category() {
 
   const [sortBy, setSortBy] = useState("byPopularity");
   const [guitars, setGuitars] = useState([]);
+  const [requestResult, setRequestResult] = useState(true);
   const [productCard, setProductCard] = useState(<></>); // before the search result comes, product card is empty
   const [anchorEl, setAnchorEl] = useState(null); // popover menu anchor
 
@@ -90,6 +91,7 @@ export default function category() {
 
     // search for guitars, then set guitars to the result of the search
     setGuitars(request.searchResult);
+    setRequestResult(request.result);
   }
 
   useEffect(() => {
@@ -106,7 +108,7 @@ export default function category() {
     <>
       <Header />
       {sortPopover()}
-      {productCard}
+      {requestResult ? productCard : <p className={styles.noResult}>No results were found.</p>}
     </>
   );
 }
