@@ -34,8 +34,6 @@ export default function SearchBar() {
   }
 
   // TODO: make it execute search when pressing ENTER as well
-  // TODO: add check if search input is empty
-  // FIXME: cannot launch second search
   return (
     <div className={styles.searchBarContainer}>
       {/* <TextField
@@ -54,11 +52,22 @@ export default function SearchBar() {
         onClick={() => handleSearchClick()}
       /> */}
 
-      <input className={styles.searchBar} type="text" onChange={inputHandler} placeholder="Search" minLength="1" maxLength="28" />
+      <input
+        className={styles.searchBar}
+        type="text"
+        onChange={inputHandler}
+        placeholder="Search"
+        minLength="1"
+        maxLength="28"
+      />
+      {/* <button className={styles.button} onClick={() => handleSearchClick()}>
+        Search
+      </button> */}
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className={styles.searchIcon}
         onClick={() => handleSearchClick()}
+        // style={{fontSize: 19}}
       />
     </div>
   );

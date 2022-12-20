@@ -10,18 +10,41 @@
   width: 20vw;
 }
 
+.searchBarContainer {
+  /* border: 1px red solid; */
+  width: 21vw;
+  height: 40px;
+
+}
+
 .searchBar {
-  width: 20vw;
   border-radius: 4px 0 0 4px;
   border: 0px;
-  padding: 8px 14px;
+  padding: 0 20px;
+  font-size: 16px;
+
+  width: 100%;
+  height: 100%;
+}
+.searchBar:focus {
+  outline: none;
+  background-color: rgb(224, 224, 224);
 }
 
 .searchIcon {
-  /* background-color: white; */
+  cursor: pointer;
   color: black;
   background-color: white;
+  padding: 12px 20px;
+  border-radius: 0 4px 4px 0;
+  /* font-size: 19px; */
+  
+}
+
+.button {
+  border: 0px;
   padding: 8px 8px;
   border-radius: 0 4px 4px 0;
-
+  background-color: #151515;
+  color: white;
 }
