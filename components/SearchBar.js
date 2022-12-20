@@ -18,16 +18,23 @@ export default function SearchBar() {
   }
 
   function handleSearchClick() {
-    // redirects to search result
+    // if search field is empty, do not proceed
+    if (inputText.trim() === "") {
+      alert("Search field cannot be empty");
+      return;
+    }
+
+    // search field is filled: redirects to search result
     router.push(
       { pathname: "./category", query: { parameter: inputText } },
       `/${inputText}`
     );
+
+    // TODO: if already on ./category, just launch search without router.push()
   }
 
   // TODO: make it execute search when pressing ENTER as well
   // TODO: add check if search input is empty
-  // TODO: add msg if no search result
   // FIXME: cannot launch second search
   return (
     <div className={styles.searchBarContainer}>
@@ -46,7 +53,6 @@ export default function SearchBar() {
         className={styles.searchIcon}
         onClick={() => handleSearchClick()}
       /> */}
-      {/* <p onClick={() => handleSearchClick()}>search</p> */}
 
       <input className={styles.searchBar} type="text" onChange={inputHandler} placeholder="Search" minLength="1" maxLength="28" />
       <FontAwesomeIcon
