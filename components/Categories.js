@@ -1,6 +1,4 @@
 import styles from "../styles/Categories.module.css";
-import "react-multi-carousel/lib/styles.css";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
 
@@ -11,40 +9,46 @@ export default function Categories() {
     {
       source: "/categories/acoustic.jpg",
       parameter: "category/acoustic",
-      title: "Acoustic",
+      title: "acoustic",
     },
     {
       source: "/categories/electric.jpg",
       parameter: "category/electric",
-      title: "Electric",
+      title: "electric",
     },
-    { source: "/categories/bass.jpg", parameter: "category/bass", title: "Bass" },
+    {
+      source: "/categories/bass.jpg",
+      parameter: "category/bass",
+      title: "bass",
+    },
   ];
 
   // function that redirects to category page
   function toCategoryPage(props) {
     router.push(
-      { pathname: "./category", query: { parameter: props } },
-      `/${props}`
+      { pathname: "./category", query: { parameter: props.parameter } },
+      `/${props.title}`
     );
   }
-
+  
   // category images (acoustic, electric, bass image)
   const categories = images.map((image, i) => {
+    // capitalizes first letter
+    const titleFormatted =
+      image.title.charAt(0).toUpperCase() + image.title.slice(1);
+
     return (
-      <div className={styles.imageContainer} key={i} >
+      <div className={styles.imageContainer} key={i}>
         <img
           key={i}
           src={image.source}
           className={styles.image}
-          // width={300}
-          // height={300}
         />
         <div
           className={styles.imageOverlay}
-          onClick={() => toCategoryPage(image.parameter)}
+          onClick={() => toCategoryPage(image)}
         >
-          <div className={styles.imageTitle}>{image.title}</div>
+          <div className={styles.imageTitle}>{titleFormatted}</div>
         </div>
       </div>
     );

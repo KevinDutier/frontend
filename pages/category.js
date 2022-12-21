@@ -85,9 +85,10 @@ export default function category() {
 
   // search function executed upon loading the page
   async function search() {
-    const request = await fetch(
+    const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.parameter}/${sortBy}`
-    ).then((res) => res.json());
+    );
+    const request = await res.json();
 
     // search for guitars, then set guitars to the result of the search
     setGuitars(request.searchResult);
