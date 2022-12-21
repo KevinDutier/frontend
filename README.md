@@ -42,6 +42,7 @@ Frontend:
 + hooks, useEffect
 + redux store and persist
 + Next JS navigation
++ passing data from one component to the next (props, useRouter query...)
 + environment variables
 + modals, popups
 
