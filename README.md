@@ -51,3 +51,4 @@ Backend:
 + communication with database
 + mongoose models
 + environment variables
+
