@@ -11,7 +11,7 @@ Hitoshi-guitars uses redux-persist, meaning the cart items will remain local sto
 
 ## Demo
 
-https://user-images.githubusercontent.com/111971458/208689191-6a59e17a-593a-4656-b990-dce770e51f9e.mp4
+https://user-images.githubusercontent.com/111971458/208732823-74d1e677-e1f7-4fbf-8538-f3c4f37bd1d7.mp4
 
 ## Technologies used
 
