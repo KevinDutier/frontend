@@ -7,7 +7,7 @@ export default function ProductCard(props) {
   const guitars = props.guitars;
 
   function toArticlePage(i) {
-    router.push({pathname: "./article", query: guitars[i]}, `/article`)
+    router.push({pathname: "./article", query: {reference: guitars[i].reference}})
   };
 
   // as long as guitars.length = 0, return spinner

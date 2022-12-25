@@ -10,47 +10,19 @@ export default function Slideshow() {
     // redirects when clicking on banner image
     if (props === 0) router.push({ pathname: "./fender" }); // 1st image, redirects to fender brand page
 
-    if (props === 1) // 2nd image, redirects to jaguar article page
-      router.push(
-        {
-          pathname: "./article",
-          query: {
-            brand: "fender",
-            model: "Player Jaguar",
-            price: 719,
-            img: [
-              "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513.JPG",
-              "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513-1.JPG",
-              "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513-2.JPG",
-              "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513-3.JPG",
-              "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513-4.JPG",
-              "https://www.woodbrass.com/images/woodbrass/FMIC+0146303513-5.JPG",
-            ],
-          },
-        },
-        "/article/jaguar"
-      );
+    if (props === 1)
+      // 2nd image, redirects to jaguar article page
+      router.push({
+        pathname: "/article",
+        query: { reference: "fender-jaguar" },
+      });
 
-    if (props === 2) // 3rd image, redirects to meteora article page
-      router.push(
-        {
-          pathname: "./article",
-          query: {
-            brand: "fender",
-            model: "Player Meteora",
-            price: 999,
-            img: [
-              "https://i.imgur.com/2g2PghO.jpg",
-              "https://i.imgur.com/ZnjFwwY.jpg",
-              "https://www.fmicassets.com/Damroot/ZoomJpg/10005/0147393395_fen_ins_fbd_1_nr.jpg",
-              "https://www.fmicassets.com/Damroot/ZoomJpg/10005/0147393395_fen_ins_cbr_1_nr.jpg",
-              "https://www.fmicassets.com/Damroot/ZoomJpg/10005/0147393395_fen_ins_hft_1_nr.jpg",
-              "https://www.fmicassets.com/Damroot/ZoomJpg/10005/0147393395_fen_ins_hbk_1_nr.jpg",
-            ],
-          },
-        },
-        "/article/meteora"
-      );
+    if (props === 2)
+      // 3rd image, redirects to meteora article page
+      router.push({
+        pathname: "./article",
+        query: { reference: "fender-meteora-bass" },
+      });
   };
 
   return (
