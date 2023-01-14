@@ -21,17 +21,17 @@ export default function SearchBar() {
       return;
     }
 
-    // search field is filled: redirects to search result
-    // router.push(
-    //   { pathname: "./category", query: { parameter: inputText } },
-    //   `/${inputText}`
-    // );
-
     router.push(
       { pathname: "./search", query: { parameter: inputText } },
       `/${inputText}`
     );
   }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSearchClick();
+    };
+  };
 
   return (
     <div className={styles.searchBarContainer}>
@@ -42,6 +42,7 @@ export default function SearchBar() {
         placeholder="Search"
         minLength="1"
         maxLength="28"
+        onKeyDown={handleKeyDown}
       />
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
