@@ -49,20 +49,14 @@ export default function Brands() {
     router.push({ pathname: "./search", query: { parameter: props.title } });
   }
 
-  // category images (acoustic, electric, bass image)
+  // brand logos
   const brands = images.map((image, i) => {
-    // capitalizes first letter
-    const titleFormatted =
-      image.title.charAt(0).toUpperCase() + image.title.slice(1);
-
     return (
-      <div className={styles.imageContainer} key={i}>
+      <div className={styles.imageContainer} key={i} onClick={() => toSearchPage(image)}>
         <img key={i} src={image.source} className={styles.image} />
         <div
           className={styles.imageOverlay}
-          onClick={() => toSearchPage(image)}
         >
-          <div className={styles.imageTitle}>{titleFormatted}</div>
         </div>
       </div>
     );
