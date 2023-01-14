@@ -53,6 +53,7 @@
 
 /* contains the text and the semi-opaque layer */
 .imageOverlay {
+  border-radius: 4px;
   opacity: 0;  /* by default, the style and text are hidden */
   position: absolute;
   top: 0;
