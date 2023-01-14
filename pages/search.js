@@ -85,7 +85,6 @@ export default function search() {
 
   // search function executed upon loading the page
   async function search() {
-    console.log(router.query.parameter)
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.parameter}/${sortBy}`
     );

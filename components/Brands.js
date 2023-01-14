@@ -7,16 +7,40 @@ export default function Brands() {
 
   const images = [
     {
-      source: "/categories/acoustic.jpg",
+      source: "https://upload.wikimedia.org/wikipedia/commons/9/91/Fender_guitars_logo.svg",
       title: "fender",
     },
     {
-      source: "/categories/electric.jpg",
+      source: "https://i.imgur.com/UveuJVK.png",
+      title: "squier",
+    },
+    {
+      source: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Lag_guitars_logo.png",
+      title: "LAG",
+    },
+    {
+      source: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Martin_guitar_logo.png",
+      title: "martin",
+    },
+    {
+      source: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cort_guitars_logo.png/200px-Cort_guitars_logo.png",
       title: "cort",
     },
     {
-      source: "/categories/bass.jpg",
+      source: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ibanez_logo.svg/200px-Ibanez_logo.svg.png",
+      title: "ibanez",
+    },
+    {
+      source: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Yamaha_logo.svg/1920px-Yamaha_logo.svg.png",
       title: "yamaha",
+    },
+    {
+      source: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Gretsch_company_logo.png",
+      title: "gretsch",
+    },
+    {
+      source: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Rickenbacker_logo.svg",
+      title: "rickenbacker",
     },
   ];
 
