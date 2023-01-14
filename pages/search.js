@@ -1,4 +1,5 @@
 import styles from "../styles/Search.module.css";
+import Footer from '../components/Footer';
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
@@ -110,6 +111,7 @@ export default function search() {
       <Header />
       {sortPopover()}
       {requestResult ? productCard : <p className={styles.noResult}>No results were found.</p>}
+      <Footer/>
     </>
   );
 }
