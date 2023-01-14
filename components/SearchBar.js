@@ -17,20 +17,16 @@ export default function SearchBar() {
   function handleSearchClick() {
     // if search field is empty, do not proceed
     if (inputText.trim() === "") {
-      alert("Search field cannot be empty");
+      alert("Search field is empty");
       return;
     }
-
-    router.push(
-      { pathname: "./search", query: { parameter: inputText } },
-      `/${inputText}`
-    );
+    router.push({ pathname: "./search", query: { parameter: inputText } });
   }
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearchClick();
-    };
+    }
   };
 
   return (
