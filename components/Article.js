@@ -136,6 +136,11 @@ export default function Article() {
                 <p className={styles.model}>{article.model}</p>
                 <p className={styles.price}>{article.price} €</p>
               </div>
+
+              <div className={styles.descContainer}>
+                <p className={styles.descText}>{article.description}</p>
+              </div>
+
               <div className={styles.icons}>
                 <p className={styles.iconText}>
                   <FontAwesomeIcon
