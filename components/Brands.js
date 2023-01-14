@@ -21,7 +21,7 @@ export default function Brands() {
   ];
 
   // function that redirects to category page
-  function toCategoryPage(props) {
+  function toSearchPage(props) {
     router.push({ pathname: "./search", query: { parameter: props.title } });
   }
 
@@ -36,7 +36,7 @@ export default function Brands() {
         <img key={i} src={image.source} className={styles.image} />
         <div
           className={styles.imageOverlay}
-          onClick={() => toCategoryPage(image)}
+          onClick={() => toSearchPage(image)}
         >
           <div className={styles.imageTitle}>{titleFormatted}</div>
         </div>

@@ -8,7 +8,7 @@ export default function Slideshow() {
 
   const clickBanner = (props) => {
     // redirects when clicking on banner image
-    if (props === 0) router.push({ pathname: "./fender" }); // 1st image, redirects to fender brand page
+    if (props === 0) router.push({ pathname: "./search", query: { parameter: "fender" } });; // 1st image, redirects to fender brand page
 
     if (props === 1)
       // 2nd image, redirects to jaguar article page
