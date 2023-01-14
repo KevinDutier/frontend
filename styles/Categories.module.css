@@ -28,7 +28,7 @@
 
 .categories {
   display: flex;
-  width: 69vw;
+  width: 70vw;
   /* min-width: 1000px; */
   justify-content: space-between;
   align-items: center;
@@ -37,6 +37,7 @@
 
 .image {
   border-radius: 4px;
+  min-width: 200px;
   cursor: pointer;
   display: block;
   width: 100%;
@@ -45,6 +46,8 @@
 /* main container (image and text) */
 .imageContainer {
   position: relative;
+  min-width: 200px;
+  margin: 0 8px;
   width: 16vw;
 }
 

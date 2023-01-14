@@ -29,9 +29,8 @@
 .brands {
   display: flex;
   flex-wrap: wrap;
-  width: 69vw;
-  /* min-width: 1000px; */
-  justify-content: space-between;
+  width: 70vw;
+  justify-content: center;
   align-items: center;
   margin: 14px auto;
 }
@@ -47,9 +46,9 @@
 /* main container (image and text) */
 .imageContainer {
   position: relative;
-  min-width: 200px;
+  min-width: 240px;
   width: 16vw;
-  margin: 0 16px;
+  margin: 8px 26px;
 
   display: inline-block;
   vertical-align: middle;
