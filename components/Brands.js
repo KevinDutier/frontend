@@ -50,7 +50,7 @@ export default function Brands() {
   }
 
   // category images (acoustic, electric, bass image)
-  const categories = images.map((image, i) => {
+  const brands = images.map((image, i) => {
     // capitalizes first letter
     const titleFormatted =
       image.title.charAt(0).toUpperCase() + image.title.slice(1);
@@ -72,7 +72,7 @@ export default function Brands() {
     <>
       <div className={styles.head}>
         <Typography
-          className={styles.ourCategories}
+          className={styles.ourBrands}
           sx={{
             fontSize: "26px",
             margin: "44px 0px 0px 24px",
@@ -83,7 +83,7 @@ export default function Brands() {
         </Typography>
       </div>
 
-      <div className={styles.categories}>{categories}</div>
+      <div className={styles.brands}>{brands}</div>
     </>
   );
 }

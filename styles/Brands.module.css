@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.ourCategories {
+.ourBrands {
   width: 90vw;
   font-size: 28px;
   margin: 36px 10px;
@@ -26,8 +26,9 @@
   margin: auto;
 }
 
-.categories {
+.brands {
   display: flex;
+  flex-wrap: wrap;
   width: 69vw;
   /* min-width: 1000px; */
   justify-content: space-between;
@@ -46,6 +47,7 @@
 .imageContainer {
   position: relative;
   width: 16vw;
+  margin: 0 16px;
 }
 
 /* contains the text and the semi-opaque layer */
@@ -87,6 +89,6 @@
 
 /* just contains the title (Acoustic, Electric, Bass) */
 .imageTitle {
-  font-size: 40px;
+  font-size: 22px;
   font-weight: 500;
 }
