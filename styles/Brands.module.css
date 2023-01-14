@@ -30,6 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 70vw;
+  /* justify-content: space-around; */
   justify-content: center;
   align-items: center;
   margin: 14px auto;
