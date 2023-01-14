@@ -111,7 +111,6 @@ export default function search() {
       <Header />
       {sortPopover()}
       {requestResult ? productCard : <p className={styles.noResult}>No results were found.</p>}
-      <Footer/>
     </>
   );
 }

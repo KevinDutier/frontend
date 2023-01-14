@@ -8,7 +8,6 @@ export default function cartReview() {
     <>
       <Header />
       <CartCard />
-      <Footer/>
     </>
   );
 }

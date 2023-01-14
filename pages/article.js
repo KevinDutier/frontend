@@ -7,7 +7,6 @@ export default function article() {
     <div>
       <Header/>
       <Article/>
-      <Footer/>
     </div>
   )
 }
