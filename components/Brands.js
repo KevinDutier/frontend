@@ -1,22 +1,22 @@
-import styles from "../styles/Categories.module.css";
+import styles from "../styles/Brands.module.css";
 import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
 
-export default function Categories() {
+export default function Brands() {
   const router = useRouter();
 
   const images = [
     {
       source: "/categories/acoustic.jpg",
-      title: "acoustic",
+      title: "fender",
     },
     {
       source: "/categories/electric.jpg",
-      title: "electric",
+      title: "cort",
     },
     {
       source: "/categories/bass.jpg",
-      title: "bass",
+      title: "yamaha",
     },
   ];
 
@@ -55,7 +55,7 @@ export default function Categories() {
             fontWeight: "400",
           }}
         >
-          Our categories
+          Our brands
         </Typography>
       </div>
 

@@ -21,11 +21,13 @@ export default function Article() {
   const [article, setArticle] = useState({});
   const [images, setImages] = useState([]);
   const [brandCapitalized, setBrandCapitalized] = useState("");
+  const [brandName, setBrandName] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
 
   // function that fetches article data from the db
   async function search() {
+    console.log(router.query.reference)
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/${router.query.reference}`
     );
@@ -36,7 +38,8 @@ export default function Article() {
       return;
     } else {
       setArticle(await request.searchResult);
-    }
+      setBrandName(request.searchResult.brand);
+  }
 
     // maps images (diplayed in the carousel) from db
     setImages(
@@ -56,7 +59,10 @@ export default function Article() {
     );
 
     // capitalizes brand's first character
-    setBrandCapitalized(request.searchResult.brand.charAt(0).toUpperCase() + request.searchResult.brand.slice(1));
+    setBrandCapitalized(
+      request.searchResult.brand.charAt(0).toUpperCase() +
+        request.searchResult.brand.slice(1)
+    );
   }
 
   // searches for article data in the db upon loading the page
@@ -169,6 +175,15 @@ export default function Article() {
               </div>
             </div>
           </div>
+
+            {/* BOTTOM SECTION
+            <div className={styles.bottom}>
+              <div className={styles.brandContainer}>
+                <img className={styles.brandLogo} src="https://upload.wikimedia.org/wikipedia/commons/9/91/Fender_guitars_logo.svg" />
+                <p className={styles.brandDescription}>{brandName}</p>
+              </div>
+            </div> */}
+
         </>
       );
     }

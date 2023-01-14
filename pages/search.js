@@ -1,4 +1,4 @@
-import styles from "../styles/Category.module.css";
+import styles from "../styles/Search.module.css";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
@@ -8,7 +8,7 @@ import { Popover, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSort } from "@fortawesome/free-solid-svg-icons";
 
-export default function category() {
+export default function search() {
   const router = useRouter();
 
   const [sortBy, setSortBy] = useState("byPopularity");
@@ -85,6 +85,7 @@ export default function category() {
 
   // search function executed upon loading the page
   async function search() {
+    console.log(router.query.parameter)
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/search/${router.query.parameter}/${sortBy}`
     );

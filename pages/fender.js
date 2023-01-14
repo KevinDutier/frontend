@@ -1,4 +1,4 @@
-import styles from "../styles/Category.module.css";
+import styles from "../styles/Search.module.css";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";

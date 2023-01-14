@@ -22,8 +22,13 @@ export default function SearchBar() {
     }
 
     // search field is filled: redirects to search result
+    // router.push(
+    //   { pathname: "./category", query: { parameter: inputText } },
+    //   `/${inputText}`
+    // );
+
     router.push(
-      { pathname: "./category", query: { parameter: inputText } },
+      { pathname: "./search", query: { parameter: inputText } },
       `/${inputText}`
     );
   }
