@@ -20,6 +20,9 @@ export default function AboutPopup() {
               Hitoshi guitars is a fictional guitar retailer website. The frontend was made with React and Next JS, while the backend uses Express JS and Mongoose. The articles' data is stored on a database (MongoDB).
               <br />
               <div className={styles.checkOut}>
+                contact: kevin.dutier@gmail.com
+              </div>
+              <div className={styles.checkOut}>
                 Check out the github repos for more information:
               </div>
               <br />
