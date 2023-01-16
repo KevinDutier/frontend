@@ -11,7 +11,7 @@ export default function Brands() {
       title: "fender",
     },
     {
-      source: "https://i.imgur.com/UveuJVK.png",
+      source: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Squier_guitars_logo.png/1200px-Squier_guitars_logo.png",
       title: "squier",
     },
     {
