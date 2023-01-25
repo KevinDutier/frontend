@@ -2,6 +2,7 @@ import styles from "../styles/Categories.module.css";
 import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
 
+// categories, displayed on homepage
 export default function Categories() {
   const router = useRouter();
 

@@ -8,24 +8,28 @@ export default function SearchBar() {
   const router = useRouter();
   const [inputText, setInputText] = useState("");
 
+  // converts input text to lower case
   function inputHandler(e) {
-    //convert input text to lower case
     const lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   }
 
-  function handleSearchClick() {
+  // function called when user clicks on "search" (or presses "enter")
+  function handleSearch() {
     // if search field is empty, do not proceed
     if (inputText.trim() === "") {
       alert("Search field is empty");
       return;
     }
+
+    // if search field is filled, redirect to search page with the user's input text
     router.push({ pathname: "./search", query: { parameter: inputText } });
   }
 
+  // if user presses enter, execute search function
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      handleSearchClick();
+      handleSearch();
     }
   };
 
@@ -43,7 +47,7 @@ export default function SearchBar() {
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className={styles.searchIcon}
-        onClick={() => handleSearchClick()}
+        onClick={() => handleSearch()}
       />
     </div>
   );

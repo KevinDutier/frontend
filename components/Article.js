@@ -17,10 +17,10 @@ import { addArticle } from "../reducers/cart";
 import { addArticlePrice } from "../reducers/cartTotal";
 import { useEffect, useState } from "react";
 
+// Article, called on article main page (after user clicks on an article)
 export default function Article() {
   const [article, setArticle] = useState({});
   const [images, setImages] = useState([]);
-  const [brandCapitalized, setBrandCapitalized] = useState("");
   const [brandName, setBrandName] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
@@ -31,19 +31,20 @@ export default function Article() {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles/${router.query.reference}`
     );
-    const request = await res.json();
+    const response = await res.json();
 
     // wait for result, then set article data
-    if (!request.searchResult) {
+    if (!response.searchResult) {
       return;
     } else {
-      setArticle(await request.searchResult);
-      setBrandName(request.searchResult.brand);
+      // once response has been received, set article data accordingly
+      setArticle(await response.searchResult);
+      setBrandName(response.searchResult.brand);
   }
 
     // maps images (diplayed in the carousel) from db
     setImages(
-      await request.searchResult.img.map((image, i) => {
+      await response.searchResult.img.map((image, i) => {
         return (
           <div key={i} className={styles.imageContainer}>
             <img
@@ -56,12 +57,6 @@ export default function Article() {
           </div>
         );
       })
-    );
-
-    // capitalizes brand's first character
-    setBrandCapitalized(
-      request.searchResult.brand.charAt(0).toUpperCase() +
-        request.searchResult.brand.slice(1)
     );
   }
 
@@ -122,7 +117,7 @@ export default function Article() {
               <div className={styles.topRight}>
                 {/* contains the brand the "add" button */}
                 <div className={styles.container}>
-                  <p className={styles.brand}>{brandCapitalized}</p>
+                  <p className={styles.brand}>{article.brand}</p>
 
                   <div className={styles.buttonAnimation}>
                     <button
@@ -175,15 +170,6 @@ export default function Article() {
               </div>
             </div>
           </div>
-
-            {/* BOTTOM SECTION
-            <div className={styles.bottom}>
-              <div className={styles.brandContainer}>
-                <img className={styles.brandLogo} src="https://upload.wikimedia.org/wikipedia/commons/9/91/Fender_guitars_logo.svg" />
-                <p className={styles.brandDescription}>{brandName}</p>
-              </div>
-            </div> */}
-
         </>
       );
     }

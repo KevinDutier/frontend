@@ -1,29 +1,36 @@
-.noResult {
-  width: 100%;
-  text-align: center;
+.spinner {
+  margin-top: 54px;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
 }
 
 /* "sort by" popover */
-.sortBy {
-  /* add shadow */
+.sortByContainer {
   position: absolute;
-  left: 93.7vw;
+
+  /* have tu use "left" instead of "right" because the scrollbar is taken into account when using "right*/
+  left: 93vw;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popoverIcon {
+  margin-left: 0.6em;
   cursor: pointer;
-  position: absolute;
-  left: 97vw;
-  top: 98px;
 }
 
 .popoverItem {
   cursor: pointer;
-  padding: 0 6px
+  padding: 0 6px;
 }
 
 .popoverItemLast {
   cursor: pointer;
-  padding: 0 6px
+  padding: 0 6px;
 }
 /* end of "sort by" popover */

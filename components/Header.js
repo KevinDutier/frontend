@@ -16,6 +16,7 @@ import { removeArticle } from "../reducers/cart";
 import { removeArticlePrice, resetCartTotal } from "../reducers/cartTotal";
 import { useSelector } from "react-redux";
 
+// header, displayed at the top of each page
 export default function Header() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);

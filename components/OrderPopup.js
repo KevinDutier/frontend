@@ -2,6 +2,7 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import styles from "../styles/OrderPopup.module.css";
 
+// order popup that says "thank you for your purchase"; which appears once user "confirms" an order
 export default function OrderPopup(props) {
   // if cart is empty, display "your cart is empty", else display thank you message 
   function cartEmptyCheck() {

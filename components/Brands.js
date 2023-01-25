@@ -2,6 +2,7 @@ import styles from "../styles/Brands.module.css";
 import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
 
+// brand logos, displayed on the home page
 export default function Brands() {
   const router = useRouter();
 
@@ -44,7 +45,7 @@ export default function Brands() {
     },
   ];
 
-  // function that redirects to category page
+  // function that redirects to brand page on user click
   function toSearchPage(props) {
     router.push({ pathname: "./search", query: { parameter: props.title } });
   }

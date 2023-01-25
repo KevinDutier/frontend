@@ -3,6 +3,7 @@ import styles from "../styles/Slideshow.module.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
+// main carousel, displayed on the homepage
 export default function Slideshow() {
   const router = useRouter();
 

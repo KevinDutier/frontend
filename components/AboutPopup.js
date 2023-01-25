@@ -2,6 +2,8 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import styles from "../styles/AboutPopup.module.css";
 
+// AboutPopup, located in the header
+// shows website information when clicked
 export default function AboutPopup() {
   return (
     <>
